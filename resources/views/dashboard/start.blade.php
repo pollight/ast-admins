@@ -64,27 +64,8 @@
 @section('content')
     <div class="row">
         <div class="col-12 pl-0">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <spam class="nav-link active">Original</spam>
-                </li>
-                <li class="nav-item">
-                    <spam class="nav-link">X-ray</spam>
-                </li>
-                <li class="nav-item">
-                    <spam class="nav-link">Gray</spam>
-                </li>
-            </ul>
 
-            <div class="tab-content">
-                <div class="picture item-1 mb-2"
-                     style="background-image: url({{ \Storage::disk('public')->url('pictures/original/1/1.jpg') }})"
-                ></div>
-
-                <div class="picture item-2"
-                     style="background-image: url({{ \Storage::disk('public')->url('pictures/original/2/2.jpg') }})"
-                ></div>
-            </div>
+            <tab-picture-content-component :pictures="{{ json_encode($pictures) }}" ></tab-picture-content-component>
 
             <h4 class="title-type-4 mb-3">Последняя проверка</h4>
             <div class="table-responsive">
