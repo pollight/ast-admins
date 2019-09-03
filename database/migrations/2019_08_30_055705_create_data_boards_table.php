@@ -17,9 +17,9 @@ class CreateDataBoardsTable extends Migration
             
             $table->bigIncrements('id');
 
-            $table->bigInteger('Length')->index();
-            $table->bigInteger('Width')->index();
-            $table->bigInteger('Height')->index();
+            $table->float('Length', 8, 2)->index();
+            $table->float('Width', 8, 2)->index();
+            $table->float('Height', 8, 2)->index();
             $table->dateTime('Time')->index();
             $table->bigInteger('Volume')->index();
             $table->string('Type')->index();

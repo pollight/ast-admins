@@ -105,10 +105,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .system-datetime {
   font-size: 12px;
-  line-height: 150%;
   opacity: 0.75;
   margin-left: 8px;
   margin-right: 10px;
+  min-width: 160px;
 }
 
 .system-datetime-info {
@@ -129,6 +129,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 20px;
   margin-bottom: 8px;
   font-weight: 500;
+  color: #fff;
 }
 
 .form-button {
@@ -202,9 +203,10 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   margin-top: 9px;
+  transition: all .5s;
 }
 .progress-bar-planning .line {
-  width: 60%;
+  width: 0;
   display: block;
   height: 100%;
   background: #F0C220;
@@ -238,6 +240,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
   border: none;
   padding: 0 0 0.7rem 0;
+  cursor: pointer;
 }
 .content .nav-tabs .nav-link.active, .content .nav-tabs .nav-item.show .nav-link {
   color: #fff !important;
@@ -253,6 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .content .tab-content .picture {
   background-color: #000;
+  background-size: cover;
   width: 100%;
   height: 240px;
   position: relative;
@@ -289,31 +293,31 @@ h1, h2, h3, h4, h5, h6 {
 /* end CONTENT */
 
 /* STATUS BACKGROUND TABLE */
-.status-1 {
+.status1 {
   background: #4452AD;
   opacity: 0.5;
 }
-.status-2 {
+.status2 {
   background: #4489AD;
   opacity: 0.75;
 }
-.status-3 {
+.status3 {
   background: #BA9377;
   opacity: 0.5;
 }
-.status-4 {
+.status4 {
   background: #E06C41;
   opacity: 0.5;
 }
-.status-5 {
+.status5 {
   background: #E8E0B3;
   opacity: 0.75;
 }
-.status-6 {
+.status6 {
   background: #66A3FF;
   opacity: 0.75;
 }
-.status-7 {
+.status7 {
   background: #CFC176;
   opacity: 0.75;
 }

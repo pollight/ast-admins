@@ -12,9 +12,10 @@
 */
 
 Route::get('/', 'Admin\DashboardController@start')->name('dashboard.start');
+Route::post('/get-databoard', 'DataBoardController@getDataBoard')->name('get_data_boards');
+Route::post('/get-board-current', 'DataBoardController@getBoardCurrent')->name('get_board_current');
+Route::post('/get-status-planning', 'DataBoardController@getStatusPlanning')->name('get_status_planning');
 
-Auth::routes();
+Route::post('/login', 'Auth\LoginController@login')->name('login');
 
-Route::middleware('auth')->namespace('Admin')->prefix('/admin')->group(function(){
-//    Route::get('/', 'DashboardController@start')->name('dashboard.start');
-});
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');

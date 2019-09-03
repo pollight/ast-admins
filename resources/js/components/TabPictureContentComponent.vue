@@ -2,13 +2,22 @@
     <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <span class="nav-link active">Original</span>
+                <span class="nav-link"
+                      v-bind:class="{active : CurrentNavItemPicture === 'original'}"
+                      @click="setCurrentNavItemPicture('original')"
+                >Original</span>
             </li>
             <li class="nav-item">
-                <span class="nav-link">X-ray</span>
+                <span class="nav-link"
+                      v-bind:class="{active : CurrentNavItemPicture === 'x-Ray'}"
+                      @click="setCurrentNavItemPicture('x-Ray')"
+                >X-ray</span>
             </li>
             <li class="nav-item">
-                <span class="nav-link">Gray</span>
+                <span class="nav-link"
+                      v-bind:class="{active : CurrentNavItemPicture === 'gray'}"
+                      @click="setCurrentNavItemPicture('gray')"
+                >Gray</span>
             </li>
         </ul>
 
@@ -26,34 +35,26 @@
 
 <script>
 
-    import draggable from 'vuedraggable'
-
-    import vSelect from 'vue-select'
-    import "vue-select/src/scss/vue-select.scss";
-
-    import DialogDrag from 'vue-dialog-drag'
-    import "vue-dialog-drag/dist/vue-dialog-drag.css";
-
     export default {
-        components: {
-            draggable,
-            vSelect,
-            DialogDrag
-        },
         data: function () {
 
             return {
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                picture1: 'background-image: url(' + this.pictures['original'][1] + ')',
-                picture2: 'background-image: url(' + this.pictures['original'][2] + ')',
-
+                CurrentNavItemPicture: 'original',
+                picture1: 'background-image: url(' + this.pictures['original']['top'] + ')',
+                picture2: 'background-image: url(' + this.pictures['original']['bottom'] + ')',
             }
         },
         props: [
             'pictures',
         ],
-        mounted() {
-            console.log(this.pictures);
+        methods: {
+            setCurrentNavItemPicture: function (type) {
+                this.CurrentNavItemPicture = type;
+                this.picture1 = 'background-image: url(' + this.pictures[type]['top'] + ')';
+                this.picture2 = 'background-image: url(' + this.pictures[type]['bottom'] + ')';
+            },
         }
+
     }
 </script>

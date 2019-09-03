@@ -21,6 +21,10 @@ require('vue2-animate/dist/vue2-animate.min.css');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('tab-picture-content-component', require('./components/TabPictureContentComponent.vue').default);
+Vue.component('data-boards-table-component', require('./components/DataBoardsTableComponent.vue').default);
+Vue.component('current-board-table-component', require('./components/CurrentBoardsTableComponent.vue').default);
+Vue.component('planning-component', require('./components/PlanningComponent.vue').default);
+Vue.component('date-time-component', require('./components/DateTimeComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
