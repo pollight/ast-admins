@@ -25,8 +25,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('board:create')->everyMinute();
-        $schedule->command('planning:start')->everyMinute();
+//        $schedule->command('board:create')->everyMinute();
+//        $schedule->command('planning:start')->everyMinute();
     }
 
     /**
