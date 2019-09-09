@@ -23,7 +23,10 @@
     <div class="row">
         <div class="col-12 pl-0">
 
-            <tab-picture-content-component :pictures="{{ json_encode($pictures) }}"></tab-picture-content-component>
+            <tab-picture-content-component
+                    :pictures="{{ json_encode($pictures) }}"
+                    :routes="{{ json_encode($routes) }}"
+            ></tab-picture-content-component>
 
             <h4 class="title-type-4 mb-3">Последняя проверка</h4>
             <data-boards-table-component :routes="{{ json_encode($routes) }}"></data-boards-table-component>

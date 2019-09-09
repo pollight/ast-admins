@@ -11,6 +11,20 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/dashboard.js') }}" defer></script>
+    <script>
+        function menuToggle(checked) {
+            let sidebar = document.getElementById("add_sidebar");
+            let menu = document.getElementById("menu");
+            console.log(checked);
+            if(checked) {
+                sidebar.classList.add("hidden");
+                menu.classList.remove("hidden");
+            } else {
+                sidebar.classList.remove("hidden");
+                menu.classList.add("hidden");
+            }
+        }
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -27,13 +41,22 @@
             <div class="sidebar">
                 <div class="row sidebar-container box-logo">
                     <div class="col-12 d-flex justify-content-center px-0">
+
                         <div class="butt_menu_mobile">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                            <input id="menu__toggle"
+                                   type="checkbox"
+                                   onchange="menuToggle(this.checked)"
+                                @guest disabled @endguest
+                            />
+                            <label class="menu__btn" for="menu__toggle">
+                                <span></span>
+                            </label>
                         </div>
+
                         <div class="logo-box">
-                            <img src="{{ asset('images/logo.svg') }}" alt="logo">
+                            <a href="/">
+                                <img src="{{ asset('images/logo.svg') }}" alt="logo">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -82,12 +105,14 @@
                     </div>
                 @endguest
 
-                @yield('sidebar')
+                <div id="add_sidebar">
+                    @yield('sidebar')
+                </div>
 
                 @guest
 
                 @else
-                    <div class="row sidebar-container">
+                    <div id="menu" class="row sidebar-container hidden">
                         <div class="col-12 p-0">
                             <form method="POST"
                                   action="{{ route('logout') }}"
@@ -111,5 +136,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

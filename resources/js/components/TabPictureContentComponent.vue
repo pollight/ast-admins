@@ -41,19 +41,36 @@
             return {
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 CurrentNavItemPicture: 'original',
-                picture1: 'background-image: url(' + this.pictures['original']['top'] + ')',
-                picture2: 'background-image: url(' + this.pictures['original']['bottom'] + ')',
+                picture1: 'background-color: #000',
+                picture2: 'background-color: #000)',
+                currentBoard: [],
             }
         },
         props: [
             'pictures',
+            'routes'
         ],
+        mounted() {
+            this.refresh();
+            let vue = this;
+            setInterval(function () {
+                vue.refresh();
+            }, 10000);
+        },
         methods: {
             setCurrentNavItemPicture: function (type) {
                 this.CurrentNavItemPicture = type;
-                this.picture1 = 'background-image: url(' + this.pictures[type]['top'] + ')';
-                this.picture2 = 'background-image: url(' + this.pictures[type]['bottom'] + ')';
+                this.picture1 = 'background-image: url(' + this.pictures[type]['top'] + '?' + this.currentBoard.id + ')';
+                this.picture2 = 'background-image: url(' + this.pictures[type]['bottom'] + '?' + this.currentBoard.id + ')';
             },
+            refresh: function () {
+                let vue = this;
+                axios.post(vue.routes['get_board_current']).then(function (response) {
+                    vue.currentBoard = response.data;
+                    vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?' + vue.currentBoard.id + ')';
+                    vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?' + vue.currentBoard.id + ')';
+                });
+            }
         }
 
     }

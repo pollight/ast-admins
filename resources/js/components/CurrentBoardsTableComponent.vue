@@ -43,7 +43,7 @@
             let vue = this;
             setInterval(function() {
                 vue.refresh();
-            }, 5000);
+            }, 10000);
         },
         methods: {
             refresh: function () {
