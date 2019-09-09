@@ -6,6 +6,9 @@ use Illuminate\Console\Command;
 
 use App\Models\DataBoard;
 
+use Intervention\Image\ImageManagerStatic as Image;
+use Storage;
+
 class CreateNewBoardCommand extends Command
 {
     /**
@@ -39,7 +42,7 @@ class CreateNewBoardCommand extends Command
      */
     public function handle()
     {
-        DataBoard::create(
+        $result = DataBoard::create(
             [
                 'Length' => rand(1,10),
                 'Width' => rand(10,50)/100,
@@ -61,5 +64,30 @@ class CreateNewBoardCommand extends Command
                 'Piatna' => rand(0,10),
             ]
         );
+
+
+        $path = __DIR__ . "/../../../resources/image/" . $result->id%2 . ".jpg";
+
+        //original
+        $img = Image::make($path)->encode('jpg', 95);
+        Storage::disk('public')->put('board/top.jpg',$img);
+
+        $img = Image::make($path)->flip('v')->encode('jpg', 95);
+        Storage::disk('public')->put('board/bottom.jpg',$img);
+
+        //x-Ray
+        $img = Image::make($path)->colorize(30, 0, 0)->encode('jpg', 95);
+        Storage::disk('public')->put('board/top-x-Ray.jpg',$img);
+
+        $img = Image::make($path)->flip('v')->colorize(30, 0, 0)->encode('jpg', 95);
+        Storage::disk('public')->put('board/bottom-x-Ray.jpg',$img);
+
+        //gray
+        $img = Image::make($path)->greyscale()->encode('jpg', 95);
+        Storage::disk('public')->put('board/top-gray.jpg',$img);
+
+        $img = Image::make($path)->flip('v')->greyscale()->encode('jpg', 95);
+        Storage::disk('public')->put('board/bottom-gray.jpg',$img);
+
     }
 }

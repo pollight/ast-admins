@@ -34,30 +34,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0 !important;
 }
 
+.hidden {
+  display: none !important;
+}
 /* end INIT */
-
-/* MENU ---*/
-.butt_menu_mobile {
-  position: absolute;
-  width: 30px;
-  height: 21px;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.butt_menu_mobile span {
-  background: #FF5E0C;
-  width: 100%;
-  height: 3px;
-  display: block;
-}
-
-/* end MENU */
 
 /* TITLES --- */
 
@@ -101,6 +81,10 @@ h1, h2, h3, h4, h5, h6 {
   background: #03CF3C;
   box-shadow: 0px 0px 5px rgba(3, 207, 60, 0.25);
   border-radius: 50%;
+  -webkit-animation-name: light;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
 }
 
 .system-datetime {
@@ -108,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.75;
   margin-left: 8px;
   margin-right: 10px;
-  min-width: 160px;
+  min-width: 162px;
 }
 
 .system-datetime-info {
@@ -322,3 +306,92 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.75;
 }
 /* end STATUS BACKGROUND TABLE */
+
+/* animation --- */
+@-webkit-keyframes light {
+    0% { opacity: 1; }
+    50% { opacity: 0.25; }
+    100% { opacity: 1; }
+}
+/* end animation */
+
+/* menu hamburger --- */
+.butt_menu_mobile {
+  position: absolute;
+  width: 30px;
+  height: 21px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#menu__toggle {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+
+  width: 100%;
+  height: 3px;
+
+  background-color: #FF5E0C;
+
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+/* end menu hamburger */
+/* MEDIA --- */
+@media screen and (max-width: 767px) {
+    .sidebar {
+        width: 100%;
+    }
+    .content {
+        width: 100%;
+    }
+}
+/* end MEDIA */
