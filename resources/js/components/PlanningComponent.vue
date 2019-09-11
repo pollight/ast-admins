@@ -37,7 +37,7 @@
             let vue = this;
             setInterval(function () {
                 vue.refresh();
-            }, 1000);
+            }, 100);
         },
         methods: {
             refresh: function () {

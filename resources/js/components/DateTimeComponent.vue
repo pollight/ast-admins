@@ -43,7 +43,7 @@
             vue.updateTime();
             setInterval(function () {
                 vue.updateTime();
-            }, 1000);
+            }, 100);
         },
         methods: {
             updateTime: function () {
