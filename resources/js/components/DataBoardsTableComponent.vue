@@ -100,7 +100,7 @@
             let vue = this;
             setInterval(function() {
                 vue.refresh();
-            }, 5000);
+            }, 100);
         },
         methods: {
             setCurrentNavItemPicture: function (type) {
