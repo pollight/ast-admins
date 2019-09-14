@@ -9,8 +9,8 @@
             </li>
             <li class="nav-item">
                 <span class="nav-link"
-                      v-bind:class="{active : CurrentNavItemPicture === 'x-Ray'}"
-                      @click="setCurrentNavItemPicture('x-Ray')"
+                      v-bind:class="{active : CurrentNavItemPicture === 'x_Ray'}"
+                      @click="setCurrentNavItemPicture('x_Ray')"
                 >X-ray</span>
             </li>
             <li class="nav-item">
@@ -43,12 +43,25 @@
                 CurrentNavItemPicture: 'original',
                 picture1: 'background-color: #000',
                 picture2: 'background-color: #000)',
-                currentBoard: [],
+                lastModified: {
+                    original: {
+                        'top': null,
+                        'bottom': null,
+                    },
+                    x_Ray: {
+                        'top': null,
+                        'bottom': null,
+                    },
+                    gray: {
+                        'top': null,
+                        'bottom': null,
+                    },
+                },
             }
         },
         props: [
             'pictures',
-            'routes'
+            'routes',
         ],
         mounted() {
             this.refresh();
@@ -60,15 +73,17 @@
         methods: {
             setCurrentNavItemPicture: function (type) {
                 this.CurrentNavItemPicture = type;
-                this.picture1 = 'background-image: url(' + this.pictures[type]['top'] + '?' + this.currentBoard.id + ')';
-                this.picture2 = 'background-image: url(' + this.pictures[type]['bottom'] + '?' + this.currentBoard.id + ')';
+                this.picture1 = 'background-image: url(' + this.pictures[type]['top'] + '?lastModified=' + this.lastModified[this.CurrentNavItemPicture]['top'] + ')';
+                this.picture2 = 'background-image: url(' + this.pictures[type]['bottom'] + '?lastModified=' + this.lastModified[this.CurrentNavItemPicture]['bottom'] + ')';
             },
             refresh: function () {
+
                 let vue = this;
-                axios.post(vue.routes['get_board_current']).then(function (response) {
-                    vue.currentBoard = response.data;
-                    vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?' + vue.currentBoard.id + ')';
-                    vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?' + vue.currentBoard.id + ')';
+                axios.post(vue.routes['get_last_modified']).then(function (response) {
+                    vue.lastModified = response.data;
+                    console.log(vue.lastModified);
+                    vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?lastModified=' + vue.lastModified[vue.CurrentNavItemPicture]['top'] + ')';
+                    vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?lastModified=' + vue.lastModified[vue.CurrentNavItemPicture]['bottom'] + ')';
                 });
             }
         }
