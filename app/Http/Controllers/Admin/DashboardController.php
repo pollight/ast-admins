@@ -11,7 +11,7 @@ use App\Models\DataBoard;
 
 class DashboardController extends Controller
 {
-    public function start()
+    protected function start()
     {
         $pictures['original']['top'] = Storage::disk('public')->url('board/top.jpg');
         $pictures['original']['bottom'] = Storage::disk('public')->url('board/bottom.jpg');
