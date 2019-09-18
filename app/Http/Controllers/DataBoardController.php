@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\DataBoard;
 use App\Models\Planning;
 
+use Storage;
+
 class DataBoardController extends Controller
 {
     protected function getDataBoard() {
@@ -36,4 +38,19 @@ class DataBoardController extends Controller
 
         return response()->json($status);
     }
+
+    protected function getLastModified() {
+
+        $lastModified['original']['top'] = Storage::disk('public')->lastModified('board/top.jpg');
+        $lastModified['original']['bottom'] = Storage::disk('public')->lastModified('board/bottom.jpg');
+
+        $lastModified['x_Ray']['top'] = Storage::disk('public')->lastModified('board/top-x-Ray.jpg');
+        $lastModified['x_Ray']['bottom'] = Storage::disk('public')->lastModified('board/bottom-x-Ray.jpg');
+
+        $lastModified['gray']['top'] = Storage::disk('public')->lastModified('board/top-gray.jpg');
+        $lastModified['gray']['bottom'] = Storage::disk('public')->lastModified('board/bottom-gray.jpg');
+
+        return $lastModified;
+    }
+
 }

@@ -25,6 +25,9 @@ body,
   height: 100%;
 }
 
+.mb12 {
+  margin-bottom: 12px !important;
+}
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0px;
 }
@@ -198,7 +201,10 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
 }
 
-
+.sidebar-max-height {
+  min-height: 100vh;
+  position: relative;
+}
 /* end SIDEBAR */
 
 /* CONTENT ---*/
@@ -384,7 +390,196 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   top: 8px;
 }
+
+button#logout {
+  max-width: calc(380px - 72px);
+  position: absolute;
+  bottom: 23px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu {
+  width: 100%;
+}
+.menu li a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 64px;
+  color: #fff;
+}
+.menu li a:hover {
+  text-decoration: none;
+}
+.menu li {
+  border: 1px solid #474954;
+  width: 100%;
+  height: 44px;
+  margin-bottom: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.menu li:hover ::after,
+.menu li.active::after {
+  display: block;
+  background: #FF5E0C;
+  height: 100%;
+  width: 4px;
+  position: absolute;
+  top: 0;
+  left: -3px;
+}
+
+.menu li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center center;
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 100%;
+  border-right: 1px solid #474954;
+}
+.menu li.home::before {
+  background-image: url('/images/ico-home.svg');
+}
+.menu li.recipes::before {
+  background-image: url('/images/ico-recipes.svg');
+}
+.menu li.admin::before {
+  background-image: url('/images/ico-admin.svg');
+}
+.menu li.diagnostics::before {
+  background-image: url('/images/ico-diagnostics.svg');
+}
+.menu li.stat::before {
+  background-image: url('/images/ico-stat.svg');
+}
+.menu li.network::before {
+  background-image: url('/images/ico-network.svg');
+}
+.menu li.logs::before {
+  background-image: url('/images/ico-logs.svg');
+}
+.menu li.print::before {
+  background-image: url('/images/ico-print.svg');
+}
+.menu li.save::before {
+  background-image: url('/images/ico-save.svg');
+}
+.menu li.filter::before {
+  background-image: url('/images/ico-filter.svg');
+}
 /* end menu hamburger */
+
+/* FILETER --- */
+.butt_ok {
+  display: block;
+  background-image: url(/images/ico-ok.svg);
+  background-size: cover;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+.butt_cancel {
+  display: block;
+  background-image: url(/images/ico-cancel.svg);
+  background-size: cover;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+.filter {
+  background: #383B4F;
+  padding: 3px 4px;
+}
+.filter .form-group {
+  border: 1px solid #474954;
+  height: 44px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+.filter .form-group .col-left {
+  width: 44px;
+  height: 100%;
+  border-right: 1px solid #474954;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.filter .form-group .col-center-right {
+  width: calc(100% - 44px);
+  height: 100%;
+  border-right: 1px solid #474954;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.filter .form-group .col-right {
+  width: 44px;
+  height: 100%;
+  border-right: 1px solid #474954;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.filter .form-group .col-center {
+  width: calc(100% - 44px - 44px);
+  height: 100%;
+  border-right: 1px solid #474954;
+}
+.filter .form-group .col-max {
+  width: 100%;
+}
+.filter .form-name {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 20px;
+}
+/* tables --- */
+.title-query {
+  width: 100%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+/* end tables */
+/* end FILTER -- */
+
+/* RESET VUE STYLE --- */
+.vue-popper {
+  background: #383B4F !important;
+}
+.vue-input__inner {
+  color: #fff !important;
+}
+.vue-select__option--hovered {
+  background: #383B4F !important;
+  color: #498aed;
+}
+/* end RESET VUE STYLE */
+
 /* MEDIA --- */
 @media screen and (max-width: 767px) {
     .sidebar {
