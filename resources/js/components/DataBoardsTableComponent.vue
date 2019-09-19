@@ -5,7 +5,7 @@
             <tr>
                 <th scope="col">№</th>
                 <th scope="col">Время снимка</th>
-                <th scope="col" class="text-right text-nowrap">Ш×В×Т, м</th>
+                <th scope="col" class="text-right text-nowrap">Ш×В×Т</th>
                 <th scope="col" class="text-right text-nowrap">Объем, м3</th>
                 <th scope="col" class="text-center">Тип древесины</th>
                 <th scope="col" class="text-right">Сорт</th>
@@ -31,10 +31,10 @@
                     {{ item.time }}
                 </td>
                 <td>
-                    {{ item.Width }}x{{ item.Height }}x{{ item.Length }}
+                    {{ item.Width }}x{{ item.Height }}x{{ item.Length*1000 }}
                 </td>
                 <td class="text-right text-capitalize">
-                    {{ (item.Width*item.Width*item.Length).toFixed(2) }}
+                    {{ ((item.Width/1000)*(item.Height/1000)*item.Length).toFixed(3) }}
                 </td>
                 <td class="text-center text-capitalize">
                     {{ item.Type }}

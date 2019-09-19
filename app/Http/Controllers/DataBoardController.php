@@ -21,9 +21,15 @@ class DataBoardController extends Controller
     }
 
     protected function getBoardCurrent() {
-
+        $whenUpdB   = filemtime('./storage/board/bottom.jpg');
+        $fileParamB = stat('./storage/board/bottom.jpg');
+         $whenUpdT   = filemtime('./storage/board/top.jpg');
+        $fileParamT = stat('./storage/board/top.jpg');
         $databoard = DataBoard::orderBy('id','desc')->first();
-
+         $databoard['imgUpdB']= $whenUpdB;
+         $databoard['imgSizeB']= $fileParamB['size'];
+         $databoard['imgUpdT']= $whenUpdT;
+         $databoard['imgSizeT']= $fileParamT['size'];
         return response()->json($databoard);
     }
 

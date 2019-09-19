@@ -65,10 +65,13 @@
             },
             refresh: function () {
                 let vue = this;
+                let rnd = Math.random();
                 axios.post(vue.routes['get_board_current']).then(function (response) {
                     vue.currentBoard = response.data;
-                    vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?' + vue.currentBoard.id + ')';
-                    vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?' + vue.currentBoard.id + ')';
+                   // console.log(response.data);
+                    vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?' + vue.currentBoard.imgUpdT + '?' + vue.currentBoard.imgSizeT + ')';
+                    //vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?' + vue.currentBoard.id + ')';
+                    vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?' + vue.currentBoard.imgUpdB + '?' + vue.currentBoard.imgSizeB + ')';
                 });
             }
         }
