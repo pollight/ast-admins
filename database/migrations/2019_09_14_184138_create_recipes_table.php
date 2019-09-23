@@ -35,7 +35,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('knotsIntegrated_plast_quantity4')->nullable();
             $table->bigInteger('knotsIntegrated_plast_quantity5')->nullable();
 
-            $table->boolean('knotsIntegrated_kormkaDo40_enable');
+            $table->boolean('knotsIntegrated_kormkaDo40_enable')->default(false);
 
             $table->float('knotsIntegrated_kormkaDo40_size1', 8, 2)->nullable();
             $table->float('knotsIntegrated_kormkaDo40_size2', 8, 2)->nullable();
@@ -49,7 +49,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('knotsIntegrated_kormkaDo40_quantity4')->nullable();
             $table->bigInteger('knotsIntegrated_kormkaDo40_quantity5')->nullable();
 
-            $table->boolean('knotsIntegrated_kormkaPosle40_enable');
+            $table->boolean('knotsIntegrated_kormkaPosle40_enable')->default(false);
 
             $table->float('knotsIntegrated_kormkaPosle40_size1', 8, 2)->nullable();
             $table->float('knotsIntegrated_kormkaPosle40_size2', 8, 2)->nullable();
@@ -63,7 +63,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('knotsIntegrated_kormkaPosle40_quantity4')->nullable();
             $table->bigInteger('knotsIntegrated_kormkaPosle40_quantity5')->nullable();
 
-            $table->boolean('knotsNotIntagrated__plast_enable');
+            $table->boolean('knotsNotIntagrated__plast_enable')->default(false);
 
             $table->float('knotsNotIntagrated__plast_size1', 8, 2)->nullable();
             $table->float('knotsNotIntagrated__plast_size2', 8, 2)->nullable();
@@ -77,7 +77,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('knotsNotIntagrated__plast_quantity4')->nullable();
             $table->bigInteger('knotsNotIntagrated__plast_quantity5')->nullable();
 
-            $table->boolean('knotsNotIntagrated_kormkaDo40_enable');
+            $table->boolean('knotsNotIntagrated_kormkaDo40_enable')->default(false);
 
             $table->float('knotsNotIntagrated_kormkaDo40_size1', 8, 2)->nullable();
             $table->float('knotsNotIntagrated_kormkaDo40_size2', 8, 2)->nullable();
@@ -91,7 +91,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('knotsNotIntagrated_kormkaDo40_quantity4')->nullable();
             $table->bigInteger('knotsNotIntagrated_kormkaDo40_quantity5')->nullable();
 
-            $table->boolean('knotsNotIntagrated_kormkaPosle40_enable');
+            $table->boolean('knotsNotIntagrated_kormkaPosle40_enable')->default(false);
 
             $table->float('knotsNotIntagrated_kormkaPosle40_size1', 8, 2)->nullable();
             $table->float('knotsNotIntagrated_kormkaPosle40_size2', 8, 2)->nullable();
@@ -105,7 +105,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('knotsNotIntagrated_kormkaPosle40_quantity4')->nullable();
             $table->bigInteger('knotsNotIntagrated_kormkaPosle40_quantity5')->nullable();
 
-            $table->boolean('knotsWithRot_enable');
+            $table->boolean('knotsWithRot_enable')->default(false);
 
             $table->float('knotsWithRot_size1', 8, 2)->nullable();
             $table->float('knotsWithRot_size2', 8, 2)->nullable();
@@ -119,7 +119,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('knotsWithRot_quantity4')->nullable();
             $table->bigInteger('knotsWithRot_quantity5')->nullable();
 
-            $table->boolean('sineva_enable');
+            $table->boolean('sineva_enable')->default(false);
 
             $table->bigInteger('sineva_size1')->nullable();
             $table->bigInteger('sineva_size2')->nullable();
@@ -127,7 +127,7 @@ class CreateRecipesTable extends Migration
             $table->bigInteger('sineva_size4')->nullable();
             $table->bigInteger('sineva_size5')->nullable();
 
-            $table->boolean('obzolBlunt_enable');
+            $table->boolean('obzolBlunt_enable')->default(false);
 
             $table->float('obzolBlunt_size1', 8, 2)->nullable();
             $table->float('obzolBlunt_size2', 8, 2)->nullable();
@@ -135,7 +135,7 @@ class CreateRecipesTable extends Migration
             $table->float('obzolBlunt_size4', 8, 2)->nullable();
             $table->float('obzolBlunt_size5', 8, 2)->nullable();
 
-            $table->boolean('obzolSharp_enable');
+            $table->boolean('obzolSharp_enable')->default(false);
 
             $table->float('obzolSharp_size1', 8, 2)->nullable();
             $table->float('obzolSharp_size2', 8, 2)->nullable();

@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use Jenssegers\Date\Date;
 
 class Recipe extends Model
 {
@@ -133,6 +135,32 @@ class Recipe extends Model
         'obzolSharp_size3',
         'obzolSharp_size4',
         'obzolSharp_size5',
-        
+
     ];
+
+    protected $appends = [
+        'user_name',
+        'used_label',
+        'updated',
+    ];
+
+    public function getUserNameAttribute()
+    {
+        $name = User::find($this->userId)->first()->name;
+
+        return $name;
+    }
+
+    public function getUsedLabelAttribute()
+    {
+        if ($this->used)
+            return 'Используется';
+
+        return '';
+    }
+
+    public function getUpdatedAttribute()
+    {
+        return Date::parse($this->updated_at)->format('j F Y H:i');
+    }
 }

@@ -27,3 +27,7 @@ Route::get('/administration', 'DashboardController@administration')->name('dashb
 Route::get('/statistics', 'Admin\StatisticsController@index')->name('dashboard.statistics');
 Route::get('/diagnostics', 'DashboardController@diagnostics')->name('dashboard.diagnostics');
 Route::get('/neural_network', 'DashboardController@neural_network')->name('dashboard.neural_network');
+
+
+Route::get('/recipes/list', 'Admin\RecipeController@getRecipesList')->name('get_recipes_list');
+Route::post('/recipes/create', 'Admin\RecipeController@create')->name('recipes_create');
