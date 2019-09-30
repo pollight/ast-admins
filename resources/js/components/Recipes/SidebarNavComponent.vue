@@ -7,6 +7,9 @@
             <li class="menu-item save">
                 <a href="#">Сохранить PDF</a>
             </li>
+            <li class="menu-item delete" @click="onDeleteRecipe()">
+                <span>Удалить рецепт</span>
+            </li>
             <li class="menu-item add" @click="onFilter()" v-if="!isFilter">
                 <span>Добавить рецепт</span>
             </li>
@@ -96,6 +99,7 @@
                 gost: '',
                 Name: '',
                 isFilter: false,
+                currentID: 0,
             }
         },
         props: [
@@ -115,6 +119,14 @@
                 axios.post(this.routes['recipes_create'],{
                     Name: Name,
                     gost: gost,
+                }).then(function (response) {
+                    console.log(response.data);
+                });
+            },
+            onDeleteRecipe: function () {
+                let id = this.currentID;
+                axios.post(this.routes['recipes_delete'],{
+                    id: id,
                 }).then(function (response) {
                     console.log(response.data);
                 });

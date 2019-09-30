@@ -31,3 +31,4 @@ Route::get('/neural_network', 'DashboardController@neural_network')->name('dashb
 
 Route::get('/recipes/list', 'Admin\RecipeController@getRecipesList')->name('get_recipes_list');
 Route::post('/recipes/create', 'Admin\RecipeController@create')->name('recipes_create');
+Route::post('/recipes/delete', 'Admin\RecipeController@delete')->name('recipes_delete');

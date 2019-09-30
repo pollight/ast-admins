@@ -25,13 +25,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="i in recipes">
-                        <td scope="col">№</td>
-                        <td scope="col">{{ i.Name }}</td>
-                        <td scope="col">Используемый ГОСТ</td>
-                        <td scope="col">{{ i.user_name }}</td>
-                        <td scope="col">{{ i.updated }}</td>
-                        <td scope="col">{{ i.used_label }}</td>
+                    <tr v-for="(i, index) in recipes"
+                        @click="onActiveRow(i.id)"
+                        v-bind:class="{ active: currentID === i.id }"
+                    >
+                        <td>{{ ++index }}</td>
+                        <td>{{ i.Name }}</td>
+                        <td>Используемый ГОСТ</td>
+                        <td>{{ i.user_name }}</td>
+                        <td>{{ i.updated }}</td>
+                        <td>{{ i.used_label }}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -48,6 +51,7 @@
             return {
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 recipes: [],
+                currentID: 0,
             }
         },
         props: [
@@ -68,6 +72,16 @@
                     vue.recipes = response.data;
                 });
             },
+            onActiveRow: function (id) {
+                this.currentID = id;
+                this.$emit('currentID', this.currentID);
+            }
         }
     }
 </script>
+
+<style scoped>
+    .table tr::before {
+        display: none;
+    }
+</style>

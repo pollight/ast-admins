@@ -16,6 +16,7 @@ class RecipeController extends Controller
     {
 
         $routes['recipes_create'] = route('recipes_create');
+        $routes['recipes_delete'] = route('recipes_delete');
         $routes['get_recipes_list'] = route('get_recipes_list');
 
         return view('dashboard.recipes.index', [
@@ -40,5 +41,13 @@ class RecipeController extends Controller
         $recipe->save();
 
         return response()->json($recipe);
+    }
+
+    protected function delete($id) {
+
+        $recipe = Recipe::find($id);
+        $recipe->delete();
+
+        return response()->json(true);
     }
 }
