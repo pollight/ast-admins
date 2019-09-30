@@ -8,7 +8,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 require('vue2-animate/dist/vue2-animate.min.css');
-
+import VueHighcharts from 'vue-highcharts';
+ 
+Vue.use(VueHighcharts);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -25,7 +27,9 @@ Vue.component('data-boards-table-component', require('./components/DataBoardsTab
 Vue.component('current-board-table-component', require('./components/CurrentBoardsTableComponent.vue').default);
 Vue.component('planning-component', require('./components/PlanningComponent.vue').default);
 Vue.component('date-time-component', require('./components/DateTimeComponent.vue').default);
-
+Vue.component('tab-recipes-tab-table-component', require('./components/TabRecipesTableComponent.vue').default);
+Vue.component('statistics-filter-component', require('./components/Statistics/FilterComponent.vue').default);
+Vue.component('statistics-tables-component', require('./components/Statistics/TablesComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
