@@ -401,7 +401,8 @@ button#logout {
 .menu {
   width: 100%;
 }
-.menu li a {
+.menu li a,
+.menu li > span {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
@@ -409,6 +410,7 @@ button#logout {
   line-height: 17px;
   padding-left: 64px;
   color: #fff;
+  cursor: pointer;
 }
 .menu li a:hover {
   text-decoration: none;
@@ -478,6 +480,20 @@ button#logout {
 .menu li.filter::before {
   background-image: url('/images/ico-filter.svg');
 }
+.menu li.add::before {
+  background-image: url('/images/ico-add.svg');
+}
+.menu li.delete::before {
+  background-image: url('/images/ico-delete.svg');
+}
+.menu li.delete span {
+  color: #FF4444 !important;
+  cursor: pointer;
+}
+.menu li.add span {
+  color: #92D8BC !important;
+  cursor: pointer;
+}
 /* end menu hamburger */
 
 /* FILETER --- */
@@ -500,6 +516,7 @@ button#logout {
 .filter {
   background: #383B4F;
   padding: 3px 4px;
+  margin: -3px -4px;
 }
 .filter .form-group {
   border: 1px solid #474954;
@@ -552,6 +569,8 @@ button#logout {
   font-size: 14px;
   line-height: 17px;
   padding-left: 20px;
+  color: #92D8BC;
+  cursor: pointer;
 }
 /* tables --- */
 .title-query {
@@ -577,6 +596,9 @@ button#logout {
 .vue-select__option--hovered {
   background: #383B4F !important;
   color: #498aed;
+}
+.vue-select .vue-input i {
+  color: #fff;
 }
 /* end RESET VUE STYLE */
 

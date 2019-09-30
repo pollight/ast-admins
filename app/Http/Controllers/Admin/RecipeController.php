@@ -15,13 +15,39 @@ class RecipeController extends Controller
     protected function index()
     {
 
-        $routes['get_data_boards'] = route('get_data_boards');
-
-        $recipes = null;
+        $routes['recipes_create'] = route('recipes_create');
+        $routes['recipes_delete'] = route('recipes_delete');
+        $routes['get_recipes_list'] = route('get_recipes_list');
 
         return view('dashboard.recipes.index', [
-            'recipes' => $recipes,
             'routes' => $routes,
         ]);
+    }
+
+    protected function getRecipesList() {
+        $recipes = Recipe::all();
+
+        return response()->json($recipes);
+    }
+
+    protected function create(Request $request) {
+
+        $recipe = new Recipe;
+        $recipe->Name = $request->input('Name');
+        $recipe->gost = $request->input('gost');
+        $recipe->used = false;
+        $recipe->userId = auth()->user()->id;
+
+        $recipe->save();
+
+        return response()->json($recipe);
+    }
+
+    protected function delete($id) {
+
+        $recipe = Recipe::find($id);
+        $recipe->delete();
+
+        return response()->json(true);
     }
 }
