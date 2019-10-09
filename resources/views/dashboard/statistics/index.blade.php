@@ -4,7 +4,7 @@
 
 @section('sidebar')
 
-    <div class="row sidebar-container">
+    <div class="row sidebar-container d-print-none">
         <statistics-filter-component
                 :routes="{{ json_encode($routes) }}"
         ></statistics-filter-component>

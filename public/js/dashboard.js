@@ -1869,7 +1869,10 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-      currentBoard: []
+      currentBoard: [],
+      recipe: {
+        'Name': null
+      }
     };
   },
   props: ['routes'],
@@ -1884,7 +1887,8 @@ __webpack_require__.r(__webpack_exports__);
     refresh: function refresh() {
       var vue = this;
       axios.post(vue.routes['get_board_current']).then(function (response) {
-        vue.currentBoard = response.data;
+        vue.currentBoard = response.data.databoard;
+        vue.recipe = response.data.recipe;
       });
     }
   }
@@ -2148,6 +2152,2326 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vfc_dist_vfc_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vfc/dist/vfc.css */ "./node_modules/vfc/dist/vfc.css");
+/* harmony import */ var vfc_dist_vfc_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vfc_dist_vfc_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vfc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vfc */ "./node_modules/vfc/dist/vfc.common.js");
+/* harmony import */ var vfc__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vfc__WEBPACK_IMPORTED_MODULE_1__);
+var _components;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: (_components = {}, _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Input"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Input"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Button"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Button"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Checkbox"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Checkbox"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["CheckboxGroup"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["CheckboxGroup"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Radio"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Radio"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Select"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Select"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Option"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Option"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Form"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Form"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["FormItem"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["FormItem"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _components),
+  data: function data() {
+    return {};
+  },
+  props: ['routes'],
+  methods: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vfc_dist_vfc_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vfc/dist/vfc.css */ "./node_modules/vfc/dist/vfc.css");
+/* harmony import */ var vfc_dist_vfc_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vfc_dist_vfc_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vfc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vfc */ "./node_modules/vfc/dist/vfc.common.js");
+/* harmony import */ var vfc__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vfc__WEBPACK_IMPORTED_MODULE_1__);
+var _components;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: (_components = {}, _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Input"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Input"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Button"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Button"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Checkbox"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Checkbox"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["CheckboxGroup"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["CheckboxGroup"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Radio"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Radio"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Select"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Select"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Option"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Option"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["Form"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["Form"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["FormItem"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["FormItem"]), _defineProperty(_components, vfc__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"].name, vfc__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _components),
+  data: function data() {
+    return {
+      optionsGosts: [{
+        label: 'СТБ 1713-2007',
+        value: 1
+      }, {
+        label: 'СТБ 1714-2007',
+        value: 2
+      }],
+      gost: '',
+      Name: '',
+      isFilter: false,
+      currentID: 0
+    };
+  },
+  props: ['routes'],
+  methods: {
+    onFilter: function onFilter() {
+      if (this.isFilter) this.isFilter = false;else this.isFilter = true;
+    },
+    onSubmitAddForm: function onSubmitAddForm() {
+      var Name = this.Name;
+      var gost = this.gost;
+      this.isFilter = false;
+      axios.post('/Addrecepts', {
+        Name: Name,
+        gost: gost
+      }).then(function (response) {
+        console.log(response.data);
+      });
+    },
+    onDeleteRecipe: function onDeleteRecipe() {
+      var id = $("tr.active").attr('data-id');
+      alert(id);
+      axios.post('/deleteRecept', {
+        id: id
+      }).then(function (response) {
+        console.log(response);
+      });
+    },
+    onResetAddForm: function onResetAddForm() {
+      this.gost = '';
+      this.isFilter = false;
+      this.Name = '';
+    },
+    checkRecept: function checkRecept() {
+      axios.post('/selectrecept', {
+        Name: nameR
+      }).then(function (response) {
+        console.log(response);
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      recipes: [],
+      currentID: 0
+    };
+  },
+  props: ['routes'],
+  mounted: function mounted() {
+    this.refresh();
+    var vue = this;
+    setInterval(function () {
+      vue.refresh();
+    }, 1000);
+  },
+  methods: {
+    refresh: function refresh() {
+      var vue = this;
+      axios.get(vue.routes['get_recipes_list']).then(function (response) {
+        vue.recipes = response.data;
+        vue.recipes.forEach(function (a, b) {
+          if (a.selected) {
+            a.select = "Испoльуется";
+          } else {
+            a.select = "";
+          }
+        });
+      });
+    },
+    onActiveRow: function onActiveRow(id, name) {
+      this.currentID = id;
+      window.nameR = name;
+      this.$emit('currentID', this.currentID);
+      $(".nav li a.disabled").removeClass("disabled");
+      $("span.noclick").removeClass("noclick");
+    },
+    getRec: function getRec() {
+      axios.post('/redactRecept', {
+        'Name': nameR
+      }).then(function (response) {
+        window.obj1 = response.data;
+
+        for (var _i = 0, _Object$entries = Object.entries(obj1); _i < _Object$entries.length; _i++) {
+          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+              key = _Object$entries$_i[0],
+              value = _Object$entries$_i[1];
+
+          console.log("".concat(key, ": ").concat(value, ":").concat(_typeof(value)));
+
+          if (typeof value == 'boolean' && key != 'selected') {
+            if (value != null) {
+              $("#" + key).attr("checked", value);
+            }
+          } else {
+            if (value != null) {
+              $("#" + key).attr("value", value);
+            } else {
+              $("#" + key).attr("value", 0);
+            }
+          }
+        }
+      });
+    },
+    udateRec: function udateRec() {
+      var allData = new Array();
+      $('#allTabs').find('input').each(function (key, val) {
+        // console.log(key,'  ',$(this).val(),' ',$(this).attr("id")) selected
+        var id = $(this).attr("id");
+        var data = $(this).val();
+
+        if (id.includes('Enable')) {
+          data = $(this).prop('checked');
+        }
+
+        ;
+        allData.push({
+          id: id,
+          val: data
+        });
+      });
+      axios.post('/updateRecepts', {
+        "data": allData,
+        'name': nameR
+      }).then(function (response) {
+        obj = response.data;
+
+        for (var _i2 = 0, _Object$entries2 = Object.entries(obj); _i2 < _Object$entries2.length; _i2++) {
+          var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
+              key = _Object$entries2$_i[0],
+              value = _Object$entries2$_i[1];
+
+          console.log("".concat(key, ": ").concat(value));
+          $("#" + key).attr("value", value);
+        }
+      });
+    }
+  }
+});
+
+window.upd = function () {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  $.ajax({
+    type: 'POST',
+    url: '/redactRecept',
+    data: {
+      'Name': nameR
+    },
+    success: function success(data) {
+      window.obj1 = JSON.parse(data);
+
+      for (var _i3 = 0, _Object$entries3 = Object.entries(obj1); _i3 < _Object$entries3.length; _i3++) {
+        var _Object$entries3$_i = _slicedToArray(_Object$entries3[_i3], 2),
+            key = _Object$entries3$_i[0],
+            value = _Object$entries3$_i[1];
+
+        console.log("".concat(key, ": ").concat(value, ":").concat(_typeof(value)));
+
+        if (typeof value == 'boolean' && key != 'selected') {
+          if (value != null) {
+            $("#" + key).attr("checked", value);
+          }
+        } else {
+          // $("#"+key).val(0);
+          if (value != null) {
+            $("#" + key).val(value);
+          } else {
+            $("#" + key).val(0);
+          }
+        }
+      }
+    }
+  });
+};
 
 /***/ }),
 
@@ -2478,6 +4802,126 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 window.val = {
   endTime: null,
   startTime: 'null',
@@ -2488,35 +4932,13 @@ window.val = {
   toPoletka: null,
   inKarman: null
 };
-
-window.SumArr = function (arr) {
-  var sum = 0;
-
-  for (var j = 0; j <= arr.length - 1; j++) {
-    sum = sum + arr[j];
-  }
-
-  ;
-  return sum;
-};
-
-window.arrOutCircle = [400, 1140];
-window.arrInCircle = [arrOutCircle[0], 100, 40, 1000];
-window.procPol = Math.round(arrOutCircle[1] / SumArr(arrOutCircle) * 1000) * 100 / 1000;
-window.procSh = Math.round(arrOutCircle[0] / SumArr(arrOutCircle) * 1000) * 100 / 1000;
-window.commonV = arrOutCircle[0] + arrOutCircle[1];
-window.arrSortCircle = [500, 600, 1000, 405, 32];
-window.arrProcSortCircle = [];
-
-for (var i = 0; i <= arrSortCircle.length - 1; i++) {
-  arrProcSortCircle.push(Math.round(arrSortCircle[i] / SumArr(arrSortCircle) * 1000) * 100 / 1000);
-}
-
-;
 window.volumeD = {
   chart: {
     type: 'pie',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    spacingBottom: 50,
+    spacingTop: 10 // height: 300,
+
   },
   title: {
     style: {
@@ -2528,7 +4950,7 @@ window.volumeD = {
     },
     verticalAlign: 'middle',
     floating: true,
-    text: commonV + ' м³'
+    text: 0 + ' м³'
   },
   plotOptions: {
     pie: {
@@ -2536,7 +4958,13 @@ window.volumeD = {
       borderWidth: 0,
       cursor: 'pointer',
       dataLabels: {
-        connectorWidth: 0
+        // padding: 5,
+        // crop: false,
+        // overflow: "none",
+        connectorWidth: 0,
+        style: {
+          textOutline: false
+        }
       }
     }
   },
@@ -2550,17 +4978,17 @@ window.volumeD = {
     name: 'Всего',
     data: [{
       name: 'Щепа',
-      y: arrOutCircle[0],
+      y: 0,
       color: '#B9DE9C',
       dataLabels: {
-        format: 'Щепа <br> <span> ' + procSh + ' % </span>'
+        format: 'Щепа <br> <span> ' + 0 + ' % </span>'
       }
     }, {
       name: 'Полезный обьем',
-      y: arrOutCircle[1],
+      y: 0,
       color: '#B54C76',
       dataLabels: {
-        format: 'Полезный <br> обьем <br> <span>' + procPol + ' % </span>'
+        format: 'Полезный <br> обьем <br> <span>' + 0 + ' % </span>'
       }
     }],
     size: '100%',
@@ -2579,19 +5007,19 @@ window.volumeD = {
     name: 'Всего',
     data: [{
       name: 'Щепа',
-      y: arrInCircle[0],
+      y: 0,
       color: 'transparent'
     }, {
       name: 'На палетку',
-      y: arrInCircle[3],
+      y: 0,
       color: '#B9E4F6'
     }, {
       name: 'В кармане',
-      y: arrInCircle[1],
+      y: 0,
       color: '#8B699A'
     }, {
-      name: 'Отсортированно',
-      y: arrInCircle[2],
+      name: 'На политере',
+      y: 0,
       color: '#FF7D75'
     }],
     size: '88%',
@@ -2616,7 +5044,7 @@ window.board = {
     },
     verticalAlign: 'middle',
     floating: true,
-    text: SumArr(arrSortCircle) + ' м³'
+    text: 0 + ' м³'
   },
   plotOptions: {
     pie: {
@@ -2624,7 +5052,10 @@ window.board = {
       borderWidth: 0,
       cursor: 'pointer',
       dataLabels: {
-        connectorWidth: 0
+        connectorWidth: 0,
+        style: {
+          textOutline: false
+        }
       }
     }
   },
@@ -2638,41 +5069,41 @@ window.board = {
     name: 'Всего',
     data: [{
       name: '1 сорт',
-      y: arrSortCircle[0],
+      y: 0,
       color: '#FF7D75',
       dataLabels: {
-        format: '1 сорт <br> <span style="color:#FF7D75;"> ' + arrProcSortCircle[0] + ' % </span>'
+        format: '1 сорт <br> <span style="color:#FF7D75;"> ' + 0 + ' % </span>'
       }
     }, {
       name: '2 сорт',
-      y: arrSortCircle[1],
+      y: 0,
       color: '#8B699A',
       dataLabels: {
-        format: '2 сорт <br> <span style="color:#8B699A;">' + arrProcSortCircle[1] + ' % </span>'
+        format: '2 сорт <br> <span style="color:#8B699A;">' + 0 + ' % </span>'
       }
     }, {
       name: '3 сорт',
-      y: arrSortCircle[2],
+      y: 0,
       color: '#B9E4F6',
       dataLabels: {
-        format: '3 сорт <br> <span style="color:#B9E4F6;">' + arrProcSortCircle[2] + ' % </span>'
+        format: '3 сорт <br> <span style="color:#B9E4F6;">' + 0 + ' % </span>'
       }
     }, {
       name: '4 сорт',
-      y: arrSortCircle[3],
+      y: 0,
       color: '#B54C76',
       dataLabels: {
-        format: '4 сорт <br> <span style="color:#B54C76;">' + arrProcSortCircle[3] + ' % </span>'
+        format: '4 сорт <br> <span style="color:#B54C76;">' + 0 + ' % </span>'
       }
     }, {
       name: 'Отборный сорт',
-      y: arrSortCircle[4],
+      y: 0,
       color: '#B9DE9C',
       dataLabels: {
         padding: 0,
         verticalAlign: 'middle',
         align: 'center',
-        format: 'Отборный сорт <br> <span style="color:#B9DE9C;">' + arrProcSortCircle[4] + ' % </span>'
+        format: 'Отборный сорт <br> <span style="color:#B9DE9C;">' + 0 + ' % </span>'
       }
     }],
     size: '100%',
@@ -2722,7 +5153,13 @@ window.smena = {
     }
   },
   xAxis: {
-    categories: ['21.06.19', '22.06.19', '23.06.19', '24.06.19', '25.06.19', '26.06.19'],
+    categories: [// '21.06.19',
+      // '22.06.19',
+      // '23.06.19',
+      // '24.06.19',
+      // '25.06.19',
+      // '26.06.19',
+    ],
     labels: {
       style: {
         fontFamily: 'Montserrat',
@@ -2757,6 +5194,17 @@ window.smena = {
     column: {
       pointPadding: 0,
       borderWidth: 0
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        style: {
+          textOutline: false,
+          color: '#fff',
+          fontFamily: 'Montserrat',
+          fontStyle: 'normal'
+        }
+      }
     }
   },
   series: [{
@@ -2769,6 +5217,16 @@ window.smena = {
     data: []
   }]
 };
+axios.interceptors.request.use(function (config) {
+  function Ooops() {
+    var html = '<p>Что то пошло не так! </p><p>Перезагрузите страницу</p><div><input type="button" onclick="javascript:location.reload();" value="Перезагрузить"></div>';
+    $('#bodyModal').html(html);
+  }
+
+  $('#myModal').modal('show');
+  window.timeout = setTimeout(Ooops, 40000);
+  return config;
+});
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -2797,7 +5255,8 @@ window.smena = {
           'length_l': 0,
           "count": 0,
           'volume': 0,
-          'sort': 0
+          'sort': 0,
+          'smens': ''
         }
       }
     };
@@ -2823,13 +5282,13 @@ window.smena = {
       axios.post('/get_volume_graph', ob).then(function (response) {
         vueG.val = response.data;
         volumeD.series[0].data[0].y = vueG.val.chipsVolume;
-        volumeD.series[0].data[0].dataLabels.format = "Щепа <br> <span>" + Math.round(vueG.val.chipsVolume / vueG.val.inpVolume * 100, 1) + " % </span>";
+        volumeD.series[0].data[0].dataLabels.format = "Щепа <br> <span>" + Math.round(vueG.val.chipsVolume / vueG.val.inpVolume * 100, 2) + " % </span>";
         volumeD.series[0].data[1].y = vueG.val.sortVolume;
-        volumeD.series[0].data[1].dataLabels.format = "Полезный <br> обьем <br> <span>" + Math.round(vueG.val.sortVolume / vueG.val.inpVolume * 100, 1) + " % </span>";
+        volumeD.series[0].data[1].dataLabels.format = "Полезный <br> обьем <br> <span>" + Math.round(vueG.val.sortVolume / vueG.val.inpVolume * 100, 2) + " % </span>";
         volumeD.series[1].data[0].y = vueG.val.chipsVolume;
         volumeD.series[1].data[1].y = vueG.val.toPaletka;
-        volumeD.series[1].data[2].y = vueG.val.sortVolume - vueG.val.toPaletka;
-        volumeD.series[1].data[3].y = vueG.val.sortVolume;
+        volumeD.series[1].data[2].y = vueG.val.inKarman;
+        volumeD.series[1].data[3].y = vueG.val.sortInKarman;
         volumeD.title.text = Math.round(vueG.val.inpVolume, 2) + "­м³";
         board.series[0].data[0].y = vueG.val.sort1;
 
@@ -2862,6 +5321,8 @@ window.smena = {
         }
 
         board.title.text = vueG.val.sort1 + vueG.val.sort2 + vueG.val.sort3 + vueG.val.sort4 + vueG.val.sortOtb + "­шт.";
+        clearTimeout(timeout);
+        $('#myModal').modal('hide');
 
         if (vueG.val.graph == 1) {
           smena.series[0].data = [];
@@ -2984,168 +5445,6 @@ __webpack_require__.r(__webpack_exports__);
         //                    vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?lastModified=' + vue.lastModified[vue.CurrentNavItemPicture]['top'] + ')';
         //                   vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?lastModified=' + vue.lastModified[vue.CurrentNavItemPicture]['bottom'] + ')';
         //>>>>>>> 2e032547f7fbb0ab6bb280ab353cb845383d32ea
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TabRecipesTableComponent.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TabRecipesTableComponent.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-      CurrentNavItemPicture: 'original',
-      picture1: 'background-color: #000',
-      picture2: 'background-color: #000)',
-      lastModified: {
-        original: {
-          'top': null,
-          'bottom': null
-        },
-        x_Ray: {
-          'top': null,
-          'bottom': null
-        },
-        gray: {
-          'top': null,
-          'bottom': null
-        },
-        databoards: []
-      }
-    };
-  },
-  props: ['pictures', 'routes'],
-  mounted: function mounted() {
-    this.refresh();
-    var vue = this;
-    setInterval(function () {
-      vue.refresh();
-    }, 100);
-  },
-  methods: {
-    setCurrentNavItemPicture: function setCurrentNavItemPicture(type) {
-      this.CurrentNavItemPicture = type;
-      this.picture1 = 'background-image: url(' + this.pictures[type]['top'] + '?lastModified=' + this.lastModified[this.CurrentNavItemPicture]['top'] + ')';
-      this.picture2 = 'background-image: url(' + this.pictures[type]['bottom'] + '?lastModified=' + this.lastModified[this.CurrentNavItemPicture]['bottom'] + ')';
-    },
-    refresh: function refresh() {
-      var vue = this;
-      axios.post(vue.routes['get_last_modified']).then(function (response) {
-        vue.lastModified = response.data;
-        vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?lastModified=' + vue.lastModified[vue.CurrentNavItemPicture]['top'] + ')';
-        vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?lastModified=' + vue.lastModified[vue.CurrentNavItemPicture]['bottom'] + ')';
       });
     }
   }
@@ -7630,6 +9929,101 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 // module
 exports.push([module.i, "/*!\r\n * vue2-animate\r\n * (c) 2018 Pavel Savushkin\r\n * Released under the MIT License.\r\n * Documentation: https://github.com/asika32764/vue2-animate\r\n */@-webkit-keyframes bounceIn{20%,40%,60%,80%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:scale3d(.3,.3,.3)}20%{transform:scale3d(1.1,1.1,1.1)}40%{transform:scale3d(.9,.9,.9)}60%{opacity:1;transform:scale3d(1.03,1.03,1.03)}80%{transform:scale3d(.97,.97,.97)}to{opacity:1;transform:scale3d(1,1,1)}}@keyframes bounceIn{20%,40%,60%,80%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:scale3d(.3,.3,.3)}20%{transform:scale3d(1.1,1.1,1.1)}40%{transform:scale3d(.9,.9,.9)}60%{opacity:1;transform:scale3d(1.03,1.03,1.03)}80%{transform:scale3d(.97,.97,.97)}to{opacity:1;transform:scale3d(1,1,1)}}@-webkit-keyframes bounceOut{20%{transform:scale3d(.9,.9,.9)}50%,55%{opacity:1;transform:scale3d(1.1,1.1,1.1)}to{opacity:0;transform:scale3d(.3,.3,.3)}}@keyframes bounceOut{20%{transform:scale3d(.9,.9,.9)}50%,55%{opacity:1;transform:scale3d(1.1,1.1,1.1)}to{opacity:0;transform:scale3d(.3,.3,.3)}}@-webkit-keyframes bounceInDown{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,-3000px,0)}60%{opacity:1;transform:translate3d(0,25px,0)}75%{transform:translate3d(0,-10px,0)}90%{transform:translate3d(0,5px,0)}to{transform:none}}@keyframes bounceInDown{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,-3000px,0)}60%{opacity:1;transform:translate3d(0,25px,0)}75%{transform:translate3d(0,-10px,0)}90%{transform:translate3d(0,5px,0)}to{transform:none}}@-webkit-keyframes bounceOutDown{20%{transform:translate3d(0,10px,0)}40%,45%{opacity:1;transform:translate3d(0,-20px,0)}to{opacity:0;transform:translate3d(0,2000px,0)}}@keyframes bounceOutDown{20%{transform:translate3d(0,10px,0)}40%,45%{opacity:1;transform:translate3d(0,-20px,0)}to{opacity:0;transform:translate3d(0,2000px,0)}}@-webkit-keyframes bounceInLeft{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(-3000px,0,0)}60%{opacity:1;transform:translate3d(25px,0,0)}75%{transform:translate3d(-10px,0,0)}90%{transform:translate3d(5px,0,0)}to{transform:none}}@keyframes bounceInLeft{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(-3000px,0,0)}60%{opacity:1;transform:translate3d(25px,0,0)}75%{transform:translate3d(-10px,0,0)}90%{transform:translate3d(5px,0,0)}to{transform:none}}@-webkit-keyframes bounceOutLeft{20%{opacity:1;transform:translate3d(20px,0,0)}to{opacity:0;transform:translate3d(-2000px,0,0)}}@keyframes bounceOutLeft{20%{opacity:1;transform:translate3d(20px,0,0)}to{opacity:0;transform:translate3d(-2000px,0,0)}}@-webkit-keyframes bounceInRight{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;transform:translate3d(3000px,0,0)}60%{opacity:1;transform:translate3d(-25px,0,0)}75%{transform:translate3d(10px,0,0)}90%{transform:translate3d(-5px,0,0)}to{transform:none}}@keyframes bounceInRight{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;transform:translate3d(3000px,0,0)}60%{opacity:1;transform:translate3d(-25px,0,0)}75%{transform:translate3d(10px,0,0)}90%{transform:translate3d(-5px,0,0)}to{transform:none}}@-webkit-keyframes bounceOutRight{20%{opacity:1;transform:translate3d(-20px,0,0)}to{opacity:0;transform:translate3d(2000px,0,0)}}@keyframes bounceOutRight{20%{opacity:1;transform:translate3d(-20px,0,0)}to{opacity:0;transform:translate3d(2000px,0,0)}}@-webkit-keyframes bounceInUp{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;transform:translate3d(0,3000px,0)}60%{opacity:1;transform:translate3d(0,-20px,0)}75%{transform:translate3d(0,10px,0)}90%{transform:translate3d(0,-5px,0)}to{transform:translate3d(0,0,0)}}@keyframes bounceInUp{60%,75%,90%,from,to{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;transform:translate3d(0,3000px,0)}60%{opacity:1;transform:translate3d(0,-20px,0)}75%{transform:translate3d(0,10px,0)}90%{transform:translate3d(0,-5px,0)}to{transform:translate3d(0,0,0)}}@-webkit-keyframes bounceOutUp{20%{transform:translate3d(0,-10px,0)}40%,45%{opacity:1;transform:translate3d(0,20px,0)}to{opacity:0;transform:translate3d(0,-2000px,0)}}@keyframes bounceOutUp{20%{transform:translate3d(0,-10px,0)}40%,45%{opacity:1;transform:translate3d(0,20px,0)}to{opacity:0;transform:translate3d(0,-2000px,0)}}.bounce-enter-active,.bounce-leave-active,.bounceIn,.bounceOut{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.bounce-enter-active,.bounceIn{-webkit-animation-name:bounceIn;animation-name:bounceIn}.bounce-leave-active,.bounceOut{-webkit-animation-name:bounceOut;animation-name:bounceOut}.bounceDown-enter-active,.bounceDown-leave-active,.bounceInDown,.bounceOutDown{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.bounceDown-enter-active,.bounceInDown{-webkit-animation-name:bounceInDown;animation-name:bounceInDown}.bounceDown-leave-active,.bounceOutDown{-webkit-animation-name:bounceOutDown;animation-name:bounceOutDown}.bounceInLeft,.bounceLeft-enter-active,.bounceLeft-leave-active,.bounceOutLeft{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.bounceInLeft,.bounceLeft-enter-active{-webkit-animation-name:bounceInLeft;animation-name:bounceInLeft}.bounceLeft-leave-active,.bounceOutLeft{-webkit-animation-name:bounceOutLeft;animation-name:bounceOutLeft}.bounceInRight,.bounceOutRight,.bounceRight-enter-active,.bounceRight-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.bounceInRight,.bounceRight-enter-active{-webkit-animation-name:bounceInRight;animation-name:bounceInRight}.bounceOutRight,.bounceRight-leave-active{-webkit-animation-name:bounceOutRight;animation-name:bounceOutRight}.bounceInUp,.bounceOutUp,.bounceUp-enter-active,.bounceUp-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.bounceInUp,.bounceUp-enter-active{-webkit-animation-name:bounceInUp;animation-name:bounceInUp}.bounceOutUp,.bounceUp-leave-active{-webkit-animation-name:bounceOutUp;animation-name:bounceOutUp}@-webkit-keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadeOut{from{opacity:1}to{opacity:0}}@keyframes fadeOut{from{opacity:1}to{opacity:0}}@-webkit-keyframes fadeInDown{from{opacity:0;transform:translate3d(0,-100%,0)}to{opacity:1;transform:none}}@keyframes fadeInDown{from{opacity:0;transform:translate3d(0,-100%,0)}to{opacity:1;transform:none}}@-webkit-keyframes fadeOutDown{from{opacity:1}to{opacity:0;transform:translate3d(0,100%,0)}}@keyframes fadeOutDown{from{opacity:1}to{opacity:0;transform:translate3d(0,100%,0)}}@-webkit-keyframes fadeInDownBig{from{opacity:0;transform:translate3d(0,-2000px,0)}to{opacity:1;transform:none}}@keyframes fadeInDownBig{from{opacity:0;transform:translate3d(0,-2000px,0)}to{opacity:1;transform:none}}@-webkit-keyframes fadeOutDownBig{from{opacity:1}to{opacity:0;transform:translate3d(0,2000px,0)}}@keyframes fadeOutDownBig{from{opacity:1}to{opacity:0;transform:translate3d(0,2000px,0)}}@-webkit-keyframes fadeInLeft{from{opacity:0;transform:translate3d(-100%,0,0)}to{opacity:1;transform:none}}@keyframes fadeInLeft{from{opacity:0;transform:translate3d(-100%,0,0)}to{opacity:1;transform:none}}@-webkit-keyframes fadeOutLeft{from{opacity:1}to{opacity:0;transform:translate3d(-100%,0,0)}}@keyframes fadeOutLeft{from{opacity:1}to{opacity:0;transform:translate3d(-100%,0,0)}}@-webkit-keyframes fadeInLeftBig{from{opacity:0;transform:translate3d(-2000px,0,0)}to{opacity:1;transform:none}}@keyframes fadeInLeftBig{from{opacity:0;transform:translate3d(-2000px,0,0)}to{opacity:1;transform:none}}@-webkit-keyframes fadeOutLeftBig{from{opacity:1}to{opacity:0;transform:translate3d(-2000px,0,0)}}@keyframes fadeOutLeftBig{from{opacity:1}to{opacity:0;transform:translate3d(-2000px,0,0)}}@-webkit-keyframes fadeInRight{from{opacity:0;transform:translate3d(100%,0,0)}to{opacity:1;transform:none}}@keyframes fadeInRight{from{opacity:0;transform:translate3d(100%,0,0)}to{opacity:1;transform:none}}@-webkit-keyframes fadeOutRight{from{opacity:1}to{opacity:0;transform:translate3d(100%,0,0)}}@keyframes fadeOutRight{from{opacity:1}to{opacity:0;transform:translate3d(100%,0,0)}}@-webkit-keyframes fadeInRightBig{from{opacity:0;transform:translate3d(2000px,0,0)}to{opacity:1;transform:none}}@keyframes fadeInRightBig{from{opacity:0;transform:translate3d(2000px,0,0)}to{opacity:1;transform:none}}@-webkit-keyframes fadeOutRightBig{from{opacity:1}to{opacity:0;transform:translate3d(2000px,0,0)}}@keyframes fadeOutRightBig{from{opacity:1}to{opacity:0;transform:translate3d(2000px,0,0)}}@-webkit-keyframes fadeInUp{from{opacity:0;transform:translate3d(0,100%,0)}to{opacity:1;transform:none}}@keyframes fadeInUp{from{opacity:0;transform:translate3d(0,100%,0)}to{opacity:1;transform:none}}@-webkit-keyframes fadeOutUp{from{opacity:1}to{opacity:0;transform:translate3d(0,-100%,0)}}@-webkit-keyframes fadeInUpBig{from{opacity:0;transform:translate3d(0,2000px,0)}to{opacity:1;transform:none}}@keyframes fadeInUpBig{from{opacity:0;transform:translate3d(0,2000px,0)}to{opacity:1;transform:none}}@keyframes fadeOutUp{from{opacity:1}to{opacity:0;transform:translate3d(0,-100%,0)}}.fade-enter-active,.fade-leave-active,.fadeIn,.fadeOut{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fade-enter-active,.fadeIn{-webkit-animation-name:fadeIn;animation-name:fadeIn}.fade-leave-active,.fadeOut{-webkit-animation-name:fadeOut;animation-name:fadeOut}.fadeDown-enter-active,.fadeDown-leave-active,.fadeInDown,.fadeOutDown{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeDown-enter-active,.fadeInDown{-webkit-animation-name:fadeInDown;animation-name:fadeInDown}.fadeDown-leave-active,.fadeOutDown{-webkit-animation-name:fadeOutDown;animation-name:fadeOutDown}.fadeDownBig-enter-active,.fadeDownBig-leave-active,.fadeInDownBig,.fadeOutDownBig{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeDownBig-enter-active,.fadeInDownBig{-webkit-animation-name:fadeInDownBig;animation-name:fadeInDownBig}.fadeDownBig-leave-active,.fadeOutDownBig{-webkit-animation-name:fadeOutDownBig;animation-name:fadeOutDownBig}.fadeInLeft,.fadeLeft-enter-active,.fadeLeft-leave-active,.fadeOutLeft{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeInLeft,.fadeLeft-enter-active{-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft}.fadeLeft-leave-active,.fadeOutLeft{-webkit-animation-name:fadeOutLeft;animation-name:fadeOutLeft}.fadeInLeftBig,.fadeLeftBig-enter-active,.fadeLeftBig-leave-active,.fadeOutLeftBig{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeInLeftBig,.fadeLeftBig-enter-active{-webkit-animation-name:fadeInLeftBig;animation-name:fadeInLeftBig}.fadeLeftBig-leave-active,.fadeOutLeftBig{-webkit-animation-name:fadeOutLeftBig;animation-name:fadeOutLeftBig}.fadeInRight,.fadeOutRight,.fadeRight-enter-active,.fadeRight-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeInRight,.fadeRight-enter-active{-webkit-animation-name:fadeInRight;animation-name:fadeInRight}.fadeOutRight,.fadeRight-leave-active{-webkit-animation-name:fadeOutRight;animation-name:fadeOutRight}.fadeInRightBig,.fadeOutRightBig,.fadeRightBig-enter-active,.fadeRightBig-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeInRightBig,.fadeRightBig-enter-active{-webkit-animation-name:fadeInRightBig;animation-name:fadeInRightBig}.fadeOutRightBig,.fadeRightBig-leave-active{-webkit-animation-name:fadeOutRightBig;animation-name:fadeOutRightBig}.fadeInUp,.fadeOutUp,.fadeUp-enter-active,.fadeUp-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeInUp,.fadeUp-enter-active{-webkit-animation-name:fadeInUp;animation-name:fadeInUp}.fadeOutUp,.fadeUp-leave-active{-webkit-animation-name:fadeOutUp;animation-name:fadeOutUp}.fadeInUpBig,.fadeOutUpBig,.fadeUpBig-enter-active,.fadeUpBig-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fadeInUpBig,.fadeUpBig-enter-active{-webkit-animation-name:fadeInUpBig;animation-name:fadeInUpBig}.fadeOutUpBig,.fadeUpBig-leave-active{-webkit-animation-name:fadeOutUpBig;animation-name:fadeOutUpBig}@-webkit-keyframes rotateIn{from{transform-origin:center;transform:rotate3d(0,0,1,-200deg);opacity:0}to{transform-origin:center;transform:none;opacity:1}}@keyframes rotateIn{from{transform-origin:center;transform:rotate3d(0,0,1,-200deg);opacity:0}to{transform-origin:center;transform:none;opacity:1}}@-webkit-keyframes rotateOut{from{transform-origin:center;opacity:1}to{transform-origin:center;transform:rotate3d(0,0,1,200deg);opacity:0}}@keyframes rotateOut{from{transform-origin:center;opacity:1}to{transform-origin:center;transform:rotate3d(0,0,1,200deg);opacity:0}}@-webkit-keyframes rotateInDownLeft{from{transform-origin:left bottom;transform:rotate3d(0,0,1,-45deg);opacity:0}to{transform-origin:left bottom;transform:none;opacity:1}}@keyframes rotateInDownLeft{from{transform-origin:left bottom;transform:rotate3d(0,0,1,-45deg);opacity:0}to{transform-origin:left bottom;transform:none;opacity:1}}@-webkit-keyframes rotateOutDownLeft{from{transform-origin:left bottom;opacity:1}to{transform-origin:left bottom;transform:rotate3d(0,0,1,45deg);opacity:0}}@keyframes rotateOutDownLeft{from{transform-origin:left bottom;opacity:1}to{transform-origin:left bottom;transform:rotate3d(0,0,1,45deg);opacity:0}}@-webkit-keyframes rotateInDownRight{from{transform-origin:right bottom;transform:rotate3d(0,0,1,45deg);opacity:0}to{transform-origin:right bottom;transform:none;opacity:1}}@keyframes rotateInDownRight{from{transform-origin:right bottom;transform:rotate3d(0,0,1,45deg);opacity:0}to{transform-origin:right bottom;transform:none;opacity:1}}@-webkit-keyframes rotateOutDownRight{from{transform-origin:right bottom;opacity:1}to{transform-origin:right bottom;transform:rotate3d(0,0,1,-45deg);opacity:0}}@keyframes rotateOutDownRight{from{transform-origin:right bottom;opacity:1}to{transform-origin:right bottom;transform:rotate3d(0,0,1,-45deg);opacity:0}}@-webkit-keyframes rotateInUpLeft{from{transform-origin:left bottom;transform:rotate3d(0,0,1,45deg);opacity:0}to{transform-origin:left bottom;transform:none;opacity:1}}@keyframes rotateInUpLeft{from{transform-origin:left bottom;transform:rotate3d(0,0,1,45deg);opacity:0}to{transform-origin:left bottom;transform:none;opacity:1}}@-webkit-keyframes rotateOutUpLeft{from{transform-origin:left bottom;opacity:1}to{transform-origin:left bottom;transform:rotate3d(0,0,1,-45deg);opacity:0}}@keyframes rotateOutUpLeft{from{transform-origin:left bottom;opacity:1}to{transform-origin:left bottom;transform:rotate3d(0,0,1,-45deg);opacity:0}}@-webkit-keyframes rotateInUpRight{from{transform-origin:right bottom;transform:rotate3d(0,0,1,-90deg);opacity:0}to{transform-origin:right bottom;transform:none;opacity:1}}@keyframes rotateInUpRight{from{transform-origin:right bottom;transform:rotate3d(0,0,1,-90deg);opacity:0}to{transform-origin:right bottom;transform:none;opacity:1}}@-webkit-keyframes rotateOutUpRight{from{transform-origin:right bottom;opacity:1}to{transform-origin:right bottom;transform:rotate3d(0,0,1,90deg);opacity:0}}@keyframes rotateOutUpRight{from{transform-origin:right bottom;opacity:1}to{transform-origin:right bottom;transform:rotate3d(0,0,1,90deg);opacity:0}}.rotate-enter-active,.rotate-leave-active,.rotateIn,.rotateOut{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.rotate-enter-active,.rotateIn{-webkit-animation-name:rotateIn;animation-name:rotateIn}.rotate-leave-active,.rotateOut{-webkit-animation-name:rotateOut;animation-name:rotateOut}.rotateDownLeft-enter-active,.rotateDownLeft-leave-active,.rotateInDownLeft,.rotateOutDownLeft{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.rotateDownLeft-enter-active,.rotateInDownLeft{-webkit-animation-name:rotateInDownLeft;animation-name:rotateInDownLeft}.rotateDownLeft-leave-active,.rotateOutDownLeft{-webkit-animation-name:rotateOutDownLeft;animation-name:rotateOutDownLeft}.rotateDownRight-enter-active,.rotateDownRight-leave-active,.rotateInDownRight,.rotateOutDownRight{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.rotateDownRight-enter-active,.rotateInDownRight{-webkit-animation-name:rotateInDownRight;animation-name:rotateInDownRight}.rotateDownRight-leave-active,.rotateOutDownRight{-webkit-animation-name:rotateOutDownRight;animation-name:rotateOutDownRight}.rotateInUpLeft,.rotateOutUpLeft,.rotateUpLeft-enter-active,.rotateUpLeft-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.rotateInUpLeft,.rotateUpLeft-enter-active{-webkit-animation-name:rotateInUpLeft;animation-name:rotateInUpLeft}.rotateOutUpLeft,.rotateUpLeft-leave-active{-webkit-animation-name:rotateOutUpLeft;animation-name:rotateOutUpLeft}.rotateInUpRight,.rotateOutUpRight,.rotateUpRight-enter-active,.rotateUpRight-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.rotateInUpRight,.rotateUpRight-enter-active{-webkit-animation-name:rotateInUpRight;animation-name:rotateInUpRight}.rotateOutUpRight,.rotateUpRight-leave-active{-webkit-animation-name:rotateOutUpRight;animation-name:rotateOutUpRight}@-webkit-keyframes slideInDown{from{transform:translate3d(0,-100%,0);visibility:visible}to{transform:translate3d(0,0,0)}}@keyframes slideInDown{from{transform:translate3d(0,-100%,0);visibility:visible}to{transform:translate3d(0,0,0)}}@-webkit-keyframes slideOutDown{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(0,100%,0)}}@keyframes slideOutDown{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(0,100%,0)}}@-webkit-keyframes slideInLeft{from{transform:translate3d(-100%,0,0);visibility:visible}to{transform:translate3d(0,0,0)}}@keyframes slideInLeft{from{transform:translate3d(-100%,0,0);visibility:visible}to{transform:translate3d(0,0,0)}}@-webkit-keyframes slideOutLeft{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(-100%,0,0)}}@keyframes slideOutLeft{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(-100%,0,0)}}@-webkit-keyframes slideInRight{from{transform:translate3d(100%,0,0);visibility:visible}to{transform:translate3d(0,0,0)}}@keyframes slideInRight{from{transform:translate3d(100%,0,0);visibility:visible}to{transform:translate3d(0,0,0)}}@-webkit-keyframes slideOutRight{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(100%,0,0)}}@keyframes slideOutRight{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(100%,0,0)}}@-webkit-keyframes slideInUp{from{transform:translate3d(0,100%,0);visibility:visible}to{transform:translate3d(0,0,0)}}@keyframes slideInUp{from{transform:translate3d(0,100%,0);visibility:visible}to{transform:translate3d(0,0,0)}}@-webkit-keyframes slideOutUp{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(0,-100%,0)}}@keyframes slideOutUp{from{transform:translate3d(0,0,0)}to{visibility:hidden;transform:translate3d(0,-100%,0)}}.slide-enter-active,.slide-leave-active,.slideIn,.slideOut{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.slide-enter-active,.slideIn{-webkit-animation-name:slideIn;animation-name:slideIn}.slide-leave-active,.slideOut{-webkit-animation-name:slideOut;animation-name:slideOut}.slideDown-enter-active,.slideDown-leave-active,.slideInDown,.slideOutDown{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.slideDown-enter-active,.slideInDown{-webkit-animation-name:slideInDown;animation-name:slideInDown}.slideDown-leave-active,.slideOutDown{-webkit-animation-name:slideOutDown;animation-name:slideOutDown}.slideInLeft,.slideLeft-enter-active,.slideLeft-leave-active,.slideOutLeft{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.slideInLeft,.slideLeft-enter-active{-webkit-animation-name:slideInLeft;animation-name:slideInLeft}.slideLeft-leave-active,.slideOutLeft{-webkit-animation-name:slideOutLeft;animation-name:slideOutLeft}.slideInRight,.slideOutRight,.slideRight-enter-active,.slideRight-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.slideInRight,.slideRight-enter-active{-webkit-animation-name:slideInRight;animation-name:slideInRight}.slideOutRight,.slideRight-leave-active{-webkit-animation-name:slideOutRight;animation-name:slideOutRight}.slideInUp,.slideOutUp,.slideUp-enter-active,.slideUp-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.slideInUp,.slideUp-enter-active{-webkit-animation-name:slideInUp;animation-name:slideInUp}.slideOutUp,.slideUp-leave-active{-webkit-animation-name:slideOutUp;animation-name:slideOutUp}@-webkit-keyframes zoomIn{from{opacity:0;transform:scale3d(.3,.3,.3)}50%{opacity:1}}@keyframes zoomIn{from{opacity:0;transform:scale3d(.3,.3,.3)}50%{opacity:1}}@-webkit-keyframes zoomOut{from{opacity:1}50%{opacity:0;transform:scale3d(.3,.3,.3)}to{opacity:0}}@keyframes zoomOut{from{opacity:1}50%{opacity:0;transform:scale3d(.3,.3,.3)}to{opacity:0}}@-webkit-keyframes zoomInDown{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInDown{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@-webkit-keyframes zoomOutDown{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}to{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,2000px,0);transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomOutDown{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}to{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,2000px,0);transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@-webkit-keyframes zoomInLeft{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(-1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInLeft{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(-1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@-webkit-keyframes zoomOutLeft{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(42px,0,0)}to{opacity:0;transform:scale(.1) translate3d(-2000px,0,0);transform-origin:left center}}@keyframes zoomOutLeft{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(42px,0,0)}to{opacity:0;transform:scale(.1) translate3d(-2000px,0,0);transform-origin:left center}}@-webkit-keyframes zoomInRight{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(-10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInRight{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(-10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@-webkit-keyframes zoomOutRight{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(-42px,0,0)}to{opacity:0;transform:scale(.1) translate3d(2000px,0,0);transform-origin:right center}}@keyframes zoomOutRight{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(-42px,0,0)}to{opacity:0;transform:scale(.1) translate3d(2000px,0,0);transform-origin:right center}}@-webkit-keyframes zoomInUp{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInUp{from{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@-webkit-keyframes zoomOutUp{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}to{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,-2000px,0);transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomOutUp{40%{opacity:1;transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}to{opacity:0;transform:scale3d(.1,.1,.1) translate3d(0,-2000px,0);transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}.zoom-enter-active,.zoom-leave-active,.zoomIn,.zoomOut{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.zoom-enter-active,.zoomIn{-webkit-animation-name:zoomIn;animation-name:zoomIn}.zoom-leave-active,.zoomOut{-webkit-animation-name:zoomOut;animation-name:zoomOut}.zoomDown-enter-active,.zoomDown-leave-active,.zoomInDown,.zoomOutDown{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.zoomDown-enter-active,.zoomInDown{-webkit-animation-name:zoomInDown;animation-name:zoomInDown}.zoomDown-leave-active,.zoomOutDown{-webkit-animation-name:zoomOutDown;animation-name:zoomOutDown}.zoomInLeft,.zoomLeft-enter-active,.zoomLeft-leave-active,.zoomOutLeft{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.zoomInLeft,.zoomLeft-enter-active{-webkit-animation-name:zoomInLeft;animation-name:zoomInLeft}.zoomLeft-leave-active,.zoomOutLeft{-webkit-animation-name:zoomOutLeft;animation-name:zoomOutLeft}.zoomInRight,.zoomOutRight,.zoomRight-enter-active,.zoomRight-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.zoomInRight,.zoomRight-enter-active{-webkit-animation-name:zoomInRight;animation-name:zoomInRight}.zoomOutRight,.zoomRight-leave-active{-webkit-animation-name:zoomOutRight;animation-name:zoomOutRight}.zoomInUp,.zoomOutUp,.zoomUp-enter-active,.zoomUp-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.zoomInUp,.zoomUp-enter-active{-webkit-animation-name:zoomInUp;animation-name:zoomInUp}.zoomOutUp,.zoomUp-leave-active{-webkit-animation-name:zoomOutUp;animation-name:zoomOutUp}@-webkit-keyframes flipIn{from{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,-360deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:0}40%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:.4}50%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.5}80%{transform:perspective(400px) scale3d(.95,.95,.95) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.8}to{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}}@keyframes flipIn{from{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,-360deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:0}40%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:.4}50%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.5}80%{transform:perspective(400px) scale3d(.95,.95,.95) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.8}to{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}}@-webkit-keyframes flipOut{from{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}40%{transform:perspective(400px) scale3d(.95,.95,.95) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.6}50%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.5}80%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:.2}to{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,-360deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:0}}@keyframes flipOut{from{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}40%{transform:perspective(400px) scale3d(.95,.95,.95) translate3d(0,0,0) rotate3d(0,1,0,0deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.6}50%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:.5}80%{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:.2}to{transform:perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,-360deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:0}}@-webkit-keyframes flipInX{from{transform:perspective(400px) rotate3d(1,0,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotate3d(1,0,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{transform:perspective(400px) rotate3d(1,0,0,10deg);opacity:1}80%{transform:perspective(400px) rotate3d(1,0,0,-5deg)}to{transform:perspective(400px)}}@keyframes flipInX{from{transform:perspective(400px) rotate3d(1,0,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotate3d(1,0,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{transform:perspective(400px) rotate3d(1,0,0,10deg);opacity:1}80%{transform:perspective(400px) rotate3d(1,0,0,-5deg)}to{transform:perspective(400px)}}@-webkit-keyframes flipInY{from{transform:perspective(400px) rotate3d(0,1,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotate3d(0,1,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{transform:perspective(400px) rotate3d(0,1,0,10deg);opacity:1}80%{transform:perspective(400px) rotate3d(0,1,0,-5deg)}to{transform:perspective(400px)}}@keyframes flipInY{from{transform:perspective(400px) rotate3d(0,1,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotate3d(0,1,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{transform:perspective(400px) rotate3d(0,1,0,10deg);opacity:1}80%{transform:perspective(400px) rotate3d(0,1,0,-5deg)}to{transform:perspective(400px)}}@-webkit-keyframes flipOutX{from{transform:perspective(400px)}30%{transform:perspective(400px) rotate3d(1,0,0,-20deg);opacity:1}to{transform:perspective(400px) rotate3d(1,0,0,90deg);opacity:0}}@keyframes flipOutX{from{transform:perspective(400px)}30%{transform:perspective(400px) rotate3d(1,0,0,-20deg);opacity:1}to{transform:perspective(400px) rotate3d(1,0,0,90deg);opacity:0}}@-webkit-keyframes flipOutY{from{transform:perspective(400px)}30%{transform:perspective(400px) rotate3d(0,1,0,-15deg);opacity:1}to{transform:perspective(400px) rotate3d(0,1,0,90deg);opacity:0}}@keyframes flipOutY{from{transform:perspective(400px)}30%{transform:perspective(400px) rotate3d(0,1,0,-15deg);opacity:1}to{transform:perspective(400px) rotate3d(0,1,0,90deg);opacity:0}}.flip-enter-active,.flip-leave-active,.flipIn,.flipOut{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.flip-enter-active,.flipIn{-webkit-animation-name:flipIn;animation-name:flipIn}.flip-leave-active,.flipOut{-webkit-animation-name:flipOut;animation-name:flipOut}.flipInX,.flipOutX,.flipX-enter-active,.flipX-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.flipInX,.flipX-enter-active{-webkit-animation-name:flipInX;animation-name:flipInX}.flipOutX,.flipX-leave-active{-webkit-animation-name:flipOutX;animation-name:flipOutX}.flipInY,.flipOutY,.flipY-enter-active,.flipY-leave-active{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.flipInY,.flipY-enter-active{-webkit-animation-name:flipInY;animation-name:flipInY}.flipOutY,.flipY-leave-active{-webkit-animation-name:flipOutY;animation-name:flipOutY}@-webkit-keyframes lightSpeedIn{from{transform:translate3d(100%,0,0) skewX(-30deg);opacity:0}60%{transform:skewX(20deg);opacity:1}80%{transform:skewX(-5deg)}to{transform:translate3d(0,0,0)}}@keyframes lightSpeedIn{from{transform:translate3d(100%,0,0) skewX(-30deg);opacity:0}60%{transform:skewX(20deg);opacity:1}80%{transform:skewX(-5deg)}to{transform:translate3d(0,0,0)}}@-webkit-keyframes lightSpeedOut{from{opacity:1}to{transform:translate3d(100%,0,0) skewX(30deg);opacity:0}}@keyframes lightSpeedOut{from{opacity:1}to{transform:translate3d(100%,0,0) skewX(30deg);opacity:0}}.lightSpeed-enter-active,.lightSpeed-leave-active,.lightSpeedIn,.lightSpeedOut{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.lightSpeed-enter-active,.lightSpeedIn{-webkit-animation-name:lightSpeedIn;animation-name:lightSpeedIn}.lightSpeed-leave-active,.lightSpeedOut{-webkit-animation-name:lightSpeedOut;animation-name:lightSpeedOut}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nspan.click-1[data-v-078ff6f1]       {\n  pointer-events: auto;\n  color: green;\n}\nspan.noclick[data-v-078ff6f1]       {\n  pointer-events: none;\n  color: grey;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.table tr[data-v-6464a042]::before {\n        display: none;\n}\ntr.active[data-v-6464a042]{\n         border-left: 5px solid #d65617;\n    /*border-color: #d65617;*/\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n@media print {\n*{ \n\t\t    float: none !important;\n}\n.title-content,.title-query{\n\t\t\tcolor:black;\n\t\t\ttext-align: center !important;\n}\ntd,th{\n\t\t\tcolor:black;\n}\ntspan{\n\t\t\tfill:black;\n}\n.tableSort{\n\t\t\t/*page-break-before: always !important;*/\n\t\t\t/*max-width: 100%;*/\n\t\t\theight: 100% !important;\n\t\t\toverflow-y: visible !important;\n}\ndiv.content {\n\t\t\twidth:100% !important;\n}\n.volumeChart {\n\t\t\tpadding-top: 10%;\n\t\t\t/*page-break-after: always !important;*/\n}\n.justify-content-end{\n\t\t\tjustify-content: center !important;\n\t\t\tmargin-left: auto !important;\n    \t\tmargin-right: auto !important;\n}\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.progress-container {\n\tleft: 50%;\n\tposition: absolute;\n\ttransform: translate(-50%, -50%);\n}\n.progress {\n\tbackground-color: rgb(229,233,235);\n\theight: 0.25em;\n\tposition: relative;\n\twidth: 23em;\n}\n.progress-bar {\n\tbackground-size: 23em 0.25em;\n\theight: 100%;\n\tposition: relative;\n\tbackground-image: linear-gradient(to right, rgb(76,217,100), rgb(90,200,250), rgb(0,122,255), rgb(52,170,220), rgb(88,86,214), rgb(255,45,85));\n\t\tbackground-image: -moz-linear-gradient(to right, rgb(76,217,100), rgb(90,200,250), rgb(0,122,255), rgb(52,170,220), rgb(88,86,214), rgb(255,45,85));\n\tanimation: cssload-width 7.95s cubic-bezier(0.45, 0, 1, 1) infinite;\n\t\t-o-animation: cssload-width 7.95s cubic-bezier(0.45, 0, 1, 1) infinite;\n\t\t-ms-animation: cssload-width 7.95s cubic-bezier(0.45, 0, 1, 1) infinite;\n\t\t-webkit-animation: cssload-width 7.95s cubic-bezier(0.45, 0, 1, 1) infinite;\n\t\t-moz-animation: cssload-width 7.95s cubic-bezier(0.45, 0, 1, 1) infinite;\n}\n.progress-shadow {\n\theight: 4em;\n\tposition: absolute;\n\ttop: 100%;\n\twidth: 100%;\n\ttransform: skew(45deg);\n\t\t-o-transform: skew(45deg);\n\t\t-ms-transform: skew(45deg);\n\t\t-webkit-transform: skew(45deg);\n\t\t-moz-transform: skew(45deg);\n\ttransform-origin: 0 0;\n\t\t-o-transform-origin: 0 0;\n\t\t-ms-transform-origin: 0 0;\n\t\t-webkit-transform-origin: 0 0;\n\t\t-moz-transform-origin: 0 0;\n\tbackground-image: linear-gradient(to bottom, rgb(234,236,238), transparent);\n\t\tbackground-image: -moz-linear-gradient(to bottom, rgb(234,236,238), transparent);\n}\n@keyframes cssload-width {\n0%, 100% {\n\t\ttransition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);\n}\n0% {\n\t\twidth: 0;\n}\n100% {\n\t\twidth: 100%;\n}\n}\n@-webkit-keyframes cssload-width {\n0%, 100% {\n\t\t-webkit-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);\n}\n0% {\n\t\twidth: 0;\n}\n100% {\n\t\twidth: 100%;\n}\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* width */\n::-webkit-scrollbar {\n  width: 3px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #383a47;\n}\n \n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #ff5e0c;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #ff5e0c;\n}\n\n\n", ""]);
 
 // exports
 
@@ -38967,6 +41361,156 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablesComponent.vue?vue&type=style&index=1&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablesComponent.vue?vue&type=style&index=2&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablesComponent.vue?vue&type=style&index=3&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -58369,7 +60913,13 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("tr", [
+        _c("td", { staticClass: "coll-first" }, [_vm._v("Рецепт")]),
+        _vm._v(" "),
+        _c("td", { staticClass: "coll-second" }, [
+          _vm._v(_vm._s(_vm.recipe.Name))
+        ])
+      ]),
       _vm._v(" "),
       _c("tr", [
         _c("td", { staticClass: "coll-first" }, [_vm._v("Сорт")]),
@@ -58394,21 +60944,11 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(1)
+      _vm._m(0)
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { staticClass: "coll-first" }, [_vm._v("Рецепт")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "coll-second" }, [_vm._v("Для себя")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -58875,6 +61415,7926 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=template&id=26604859&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=template&id=26604859& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("ul", { staticClass: "nav nav-tabs" }, [
+        _c("li", { staticClass: "nav-item" }, [
+          _c("span", { staticClass: "nav-link" }, [_vm._v("Список рецептов")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c("span", { staticClass: "nav-link" }, [_vm._v("Изменение рецепта")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-content" }, [
+        _c("div", [
+          _c("ul", { staticClass: "nav nav-tabs" }, [
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link active",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-1" }
+                },
+                [
+                  _vm._v("1 Сучки"),
+                  _c("br"),
+                  _vm._v("сросшиеся "),
+                  _c("br"),
+                  _vm._v("здоровые")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-2" }
+                },
+                [
+                  _vm._v("2 Сучки частично"),
+                  _c("br"),
+                  _vm._v("сросшиеся "),
+                  _c("br"),
+                  _vm._v("и несросшиеся")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-3" }
+                },
+                [
+                  _vm._v("3 Сучки "),
+                  _c("br"),
+                  _vm._v("загнившие"),
+                  _c("br"),
+                  _vm._v("гнилые"),
+                  _c("br")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-4" }
+                },
+                [
+                  _vm._v("4 Трещины "),
+                  _c("br"),
+                  _vm._v("пластевые и"),
+                  _c("br"),
+                  _vm._v("кромочные")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-5" }
+                },
+                [
+                  _vm._v("5 Трещены "),
+                  _c("br"),
+                  _vm._v("пластевые"),
+                  _c("br"),
+                  _vm._v("сквозные")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-6" }
+                },
+                [_vm._v("6 Прорость")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-7" }
+                },
+                [_vm._v("7 Заболонь")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-8" }
+                },
+                [_vm._v("8 Плесень")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-9" }
+                },
+                [_vm._v("9 Гниль")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-10" }
+                },
+                [_vm._v("10 Синева")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-11" }
+                },
+                [_vm._v("11 Обзол")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { role: "tab", "data-toggle": "tab", href: "#tab-12" }
+                },
+                [_vm._v("12 Мех "), _c("br"), _vm._v("повреждения")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "tab-content", attrs: { id: "allTabs" } }, [
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane active",
+                attrs: { role: "tabpanel", id: "tab-1" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "healthyKnotsEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "healthyKnotsEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются размером в долях ширины стороны и в количестве на любом однометровом участке длины на каждой из сторон, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Пластевые и ребровые"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataSize0s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataAmount0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataSize1s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataAmount1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataSize2s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataAmount2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataSize3s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataAmount3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataSize4s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnStrataAmount4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Кромочные, на материалах толщиной до 40 мм"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Size0s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Amount0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Size1s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Amount1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Size2s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Amount2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Size3s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Amount3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Size4s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Amount4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Кромочные, на материалах толщиной 40 мм и более"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Size0s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Amount0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Size1s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Amount1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Size2s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Amount2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Size3s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Amount3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Size4s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeFrom40Amount4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-2" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "partHealthyKnotsEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "partHealthyKnotsEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются в общем числе сросшихся сучков размером в долях ширины стороны и в количестве на любом однометровом участке длины на каждой из сторон, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Пластевые и ребровые"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataSize0s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataAmount0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataSize1s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataAmount1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataSize2s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataAmount2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataSize3s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataAmount3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataSize4s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnStrataAmount4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Кромочные, на материалах толщиной до 40 мм"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Size0s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Amount0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Size1s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Amount1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "healthyKnotsOnEdgeTo40Size2s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Amount2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Size3s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Amount3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Size4s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeTo40Amount4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Кромочные, на материалах толщиной 40 мм и более"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Size0s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Amount0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Size1s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Amount1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Size2s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Amount2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Size3s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Amount3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Size4s"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "partHealthyKnotsOnEdgeFrom40Amount4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-3" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "badKnotsEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "badKnotsEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются в общем числе сучков размером в долях ширины стороны и в количестве на любом однометровом участке длины на каждой из сторон, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Загнившие гнилые и табачные"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsSize0s" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsAmount0s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsSize1s" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsAmount1s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsSize2s" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsAmount2s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsSize3s" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsAmount3s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsSize4s" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Количество")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "badKnotsAmount4s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-10" }
+              },
+              [_c("p", [_c("br"), _vm._v("Нет такого в базе")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-9" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "rotEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "rotEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Поверхностная")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "rotSize0s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "rotSize1s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "rotSize2s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "rotSize3s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "rotSize4s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-12" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "mechanicalDamageEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "mechanicalDamageEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Инородные тела")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "mechanicalDamageSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "mechanicalDamageSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "mechanicalDamageSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "mechanicalDamageSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "mechanicalDamageSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-8" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "moldEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "moldEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Поверхностная и глубокая"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "moldSize0s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "moldSize1s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "moldSize2s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "moldSize3s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "moldSize4s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-7" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "sapwoodEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "sapwoodEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Поверхностная и глубокая"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sapwoodSize0s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sapwoodSize1s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sapwoodSize2s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sapwoodSize3s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sapwoodSize4s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-6" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "sweepEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "sweepEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускается односторонняя широной в долях соответствующей стороны пиломатериала и длиной в долях длины пиломатериала, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Ширина"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepWidthSize0s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepWidthSize1s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepWidthSize2s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepWidthSize3s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepWidthSize4s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [_c("br"), _vm._v("Длина")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepLengthSize0s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepLengthSize1s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepLengthSize2s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepLengthSize3s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: { type: "number", id: "sweepLengthSize4s" }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-4" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        type: "checkbox",
+                        id: "strataEdgeOutOneEdgeCrackEnable"
+                      }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "strataEdgeOutOneEdgeCrackEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v(
+                    "Допускаются длиной в долях длины пиломатериала, не более:"
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Неглубокие"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeOutOneEdgeNonDeepCrackSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeOutOneEdgeNonDeepCrackSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeOutOneEdgeNonDeepCrackSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeOutOneEdgeNonDeepCrackSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeOutOneEdgeNonDeepCrackSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-5" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        type: "checkbox",
+                        id: "strataEdgeThrouthCrackEnable"
+                      }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "strataEdgeThrouthCrackEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Допускаются длиной, мм, не более:"),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Неглубокие"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeThrouthCrackSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeThrouthCrackSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeThrouthCrackSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeThrouthCrackSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "strataEdgeThrouthCrackSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane",
+                attrs: { role: "tabpanel", id: "tab-11" }
+              },
+              [
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "form-check" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "barkEnable" }
+                    }),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "barkEnable" }
+                      },
+                      [_vm._v("Разрешить")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("Отборный")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("1 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("2 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("3 сорт")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col text-center" }, [
+                    _c("span", [_vm._v("4 сорт")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("В пиломатериалах толщиной до 40 мм:"),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Допускается шириной на пласти от каждой кромки, мм"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40FromEdgeSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40FromEdgeSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40FromEdgeSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40FromEdgeSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40FromEdgeSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Допускается шириной на кромке, мм:"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40OnEdgeSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40OnEdgeSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40OnEdgeSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40OnEdgeSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40OnEdgeSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Допускается протяженностью на кромке, %, от длины"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40ExtLengthSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40ExtLengthSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40ExtLengthSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40ExtLengthSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkTo40ExtLengthSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("В пиломатериалах толщиной 40 мм и более:"),
+                  _c("br"),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v("Допускается шириной на пласти от каждой кромки, мм"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40FromEdgeSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40FromEdgeSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40FromEdgeSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40FromEdgeSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40FromEdgeSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Допускается шириной на кромке, мм:"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40OnEdgeSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40OnEdgeSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40OnEdgeSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40OnEdgeSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40OnEdgeSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("br"),
+                  _vm._v("Допускается протяженностью на кромке, %, от длины"),
+                  _c("br")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40ExtLengthSize0s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40ExtLengthSize1s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40ExtLengthSize2s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40ExtLengthSize3s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { border: "3px inset grey" }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("span", [_vm._v("Размер")])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-6" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "number",
+                              id: "barkFrom40ExtLengthSize4s"
+                            }
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button", id: "collect" }
+          },
+          [_vm._v("Сбор")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid p-0" }, [
+    _c("ul", { staticClass: "menu" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("li", { staticClass: "menu-item activates" }, [
+        _c(
+          "span",
+          {
+            staticClass: "click-1 noclick",
+            on: {
+              click: function($event) {
+                return _vm.checkRecept()
+              }
+            }
+          },
+          [_vm._v("Использовать")]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          staticClass: "menu-item delete",
+          on: {
+            click: function($event) {
+              return _vm.onDeleteRecipe()
+            }
+          }
+        },
+        [_c("span", [_vm._v("Удалить рецепт")])]
+      ),
+      _vm._v(" "),
+      !_vm.isFilter
+        ? _c(
+            "li",
+            {
+              staticClass: "menu-item add",
+              on: {
+                click: function($event) {
+                  return _vm.onFilter()
+                }
+              }
+            },
+            [_c("span", [_vm._v("Добавить рецепт")])]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.isFilter
+        ? _c("form", { staticClass: "filter" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("div", { staticClass: "col-left" }, [
+                _c("span", {
+                  staticClass: "butt_filter butt_ok",
+                  on: {
+                    click: function($event) {
+                      return _vm.onSubmitAddForm()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-center d-flex align-items-center" },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "form-name",
+                      on: {
+                        click: function($event) {
+                          return _vm.onFilter()
+                        }
+                      }
+                    },
+                    [_vm._v("Добавить рецепт")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-right" }, [
+                _c("span", {
+                  staticClass: "butt_filter butt_cancel",
+                  on: {
+                    click: function($event) {
+                      return _vm.onResetAddForm()
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "div",
+                { staticClass: "col-max" },
+                [
+                  _c("vue-input", {
+                    attrs: { placeholder: "Название нового рецепта" },
+                    model: {
+                      value: _vm.Name,
+                      callback: function($$v) {
+                        _vm.Name = $$v
+                      },
+                      expression: "Name"
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "div",
+                { staticClass: "col-max" },
+                [
+                  _c(
+                    "vue-select",
+                    {
+                      attrs: { data: _vm.optionsGosts, placeholder: "Гост" },
+                      model: {
+                        value: _vm.gost,
+                        callback: function($$v) {
+                          _vm.gost = $$v
+                        },
+                        expression: "gost"
+                      }
+                    },
+                    _vm._l(_vm.optionsGosts, function(i) {
+                      return _c("vue-option", {
+                        key: i.value,
+                        attrs: { value: i.value, label: i.label }
+                      })
+                    }),
+                    1
+                  )
+                ],
+                1
+              )
+            ])
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "menu-item print" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Печать")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "menu-item save" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Сохранить PDF")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "tab-content", attrs: { id: "BigTabs" } }, [
+      _c(
+        "div",
+        {
+          staticClass: "tab-pane active",
+          attrs: { role: "tabpanel", id: "tab1-x1" }
+        },
+        [
+          _c("div", { staticClass: "table-responsive" }, [
+            _c(
+              "table",
+              { staticClass: "table table-dark", attrs: { id: "Table" } },
+              [
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  [
+                    _vm._l(_vm.recipes, function(i, index) {
+                      return _c(
+                        "tr",
+                        {
+                          class: { active: _vm.currentID == i.id },
+                          attrs: { "data-id": i.id },
+                          on: {
+                            click: function($event) {
+                              return _vm.onActiveRow(i.id, i.Name)
+                            }
+                          }
+                        },
+                        [
+                          _c("td", [_vm._v(_vm._s(++index))]),
+                          _vm._v(" "),
+                          _c("td", { attrs: { "data-id": "obj" } }, [
+                            _vm._v(_vm._s(i.Name))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(i.Gost))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(i.user_name))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(i.Time))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(i.select))])
+                        ]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _vm._m(2)
+                  ],
+                  2
+                )
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab1-x2" } },
+        [
+          _vm._m(3),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              attrs: { type: "button", id: "collect" },
+              on: {
+                click: function($event) {
+                  return _vm.udateRec()
+                }
+              }
+            },
+            [_vm._v("одтвердить")]
+          )
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "nav nav-tabs" }, [
+      _c("li", { staticClass: "nav-item" }, [
+        _c(
+          "a",
+          {
+            staticClass: "nav-link active",
+            attrs: { role: "tab", "data-toggle": "tab", href: "#tab1-x1" }
+          },
+          [_c("span", { staticClass: "nav-link" }, [_vm._v("Список рецептов")])]
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item", attrs: { id: "redactRecept" } }, [
+        _c(
+          "a",
+          {
+            staticClass: "nav-link disabled",
+            attrs: {
+              onclick: "upd()",
+              role: "tab",
+              "data-toggle": "tab",
+              href: "#tab1-x2"
+            }
+          },
+          [
+            _c("span", { staticClass: "nav-link" }, [
+              _vm._v("Изменение рецепта")
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("№")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Имя рецепта")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Используемый ГОСТ")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Автор")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Дата добавления")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Установлен")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td"),
+      _c("td"),
+      _c("td"),
+      _c("td"),
+      _c("td"),
+      _c("td")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("ul", { staticClass: "nav nav-tabs" }, [
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link active",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-1" }
+            },
+            [
+              _vm._v("1 Сучки"),
+              _c("br"),
+              _vm._v("сросшиеся "),
+              _c("br"),
+              _vm._v("здоровые")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-2" }
+            },
+            [
+              _vm._v("2 Сучки частично"),
+              _c("br"),
+              _vm._v("сросшиеся "),
+              _c("br"),
+              _vm._v("и несросшиеся")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-3" }
+            },
+            [
+              _vm._v("3 Сучки "),
+              _c("br"),
+              _vm._v("загнившие"),
+              _c("br"),
+              _vm._v("гнилые"),
+              _c("br")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-4" }
+            },
+            [
+              _vm._v("4 Трещины "),
+              _c("br"),
+              _vm._v("пластевые и"),
+              _c("br"),
+              _vm._v("кромочные")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-5" }
+            },
+            [
+              _vm._v("5 Трещены "),
+              _c("br"),
+              _vm._v("пластевые"),
+              _c("br"),
+              _vm._v("сквозные")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-6" }
+            },
+            [_vm._v("6 Прорость")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-7" }
+            },
+            [_vm._v("7 Заболонь")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-8" }
+            },
+            [_vm._v("8 Плесень")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-9" }
+            },
+            [_vm._v("9 Гниль")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-10" }
+            },
+            [_vm._v("10 Синева")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-11" }
+            },
+            [_vm._v("11 Обзол")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { role: "tab", "data-toggle": "tab", href: "#tab-12" }
+            },
+            [_vm._v("12 Мех "), _c("br"), _vm._v("повреждения")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-content", attrs: { id: "allTabs" } }, [
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane active",
+            attrs: { role: "tabpanel", id: "tab-1" }
+          },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "healthyKnotsEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "healthyKnotsEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются размером в долях ширины стороны и в количестве на любом однометровом участке длины на каждой из сторон, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Пластевые и ребровые"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataSize0s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataAmount0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataSize1s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataAmount1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataSize2s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataAmount2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataSize3s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataAmount3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataSize4s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnStrataAmount4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Кромочные, на материалах толщиной до 40 мм"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Size0s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Amount0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Size1s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Amount1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Size2s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Amount2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Size3s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Amount3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Size4s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Amount4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Кромочные, на материалах толщиной 40 мм и более"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Size0s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Amount0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Size1s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Amount1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Size2s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Amount2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Size3s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Amount3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Size4s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeFrom40Amount4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-2" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "partHealthyKnotsEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "partHealthyKnotsEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются в общем числе сросшихся сучков размером в долях ширины стороны и в количестве на любом однометровом участке длины на каждой из сторон, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Пластевые и ребровые"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataSize0s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataAmount0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataSize1s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataAmount1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataSize2s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataAmount2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataSize3s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataAmount3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataSize4s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnStrataAmount4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Кромочные, на материалах толщиной до 40 мм"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Size0s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Amount0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Size1s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Amount1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "healthyKnotsOnEdgeTo40Size2s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Amount2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Size3s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Amount3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Size4s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeTo40Amount4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Кромочные, на материалах толщиной 40 мм и более"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Size0s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Amount0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Size1s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Amount1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Size2s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Amount2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Size3s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Amount3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Size4s"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "partHealthyKnotsOnEdgeFrom40Amount4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-3" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "badKnotsEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "badKnotsEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются в общем числе сучков размером в долях ширины стороны и в количестве на любом однометровом участке длины на каждой из сторон, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Загнившие гнилые и табачные"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsSize0s" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsAmount0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsSize1s" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsAmount1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsSize2s" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsAmount2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsSize3s" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsAmount3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsSize4s" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Количество")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "badKnotsAmount4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane",
+            attrs: { role: "tabpanel", id: "tab-10" }
+          },
+          [_c("p", [_c("br"), _vm._v("Нет такого в базе")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-9" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "rotEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "rotEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Поверхностная")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "rotSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "rotSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "rotSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "rotSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "rotSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane",
+            attrs: { role: "tabpanel", id: "tab-12" }
+          },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "mechanicalDamageEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "mechanicalDamageEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Инородные тела")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "mechanicalDamageSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "mechanicalDamageSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "mechanicalDamageSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "mechanicalDamageSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "mechanicalDamageSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-8" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "moldEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "moldEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Поверхностная и глубокая"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "moldSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "moldSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "moldSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "moldSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "moldSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-7" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "sapwoodEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "sapwoodEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются общей площадью, %, от площади пиломатериала, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Поверхностная и глубокая"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sapwoodSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sapwoodSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sapwoodSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sapwoodSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sapwoodSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-6" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "sweepEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "sweepEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускается односторонняя широной в долях соответствующей стороны пиломатериала и длиной в долях длины пиломатериала, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Ширина"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepWidthSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepWidthSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepWidthSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepWidthSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepWidthSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [_c("br"), _vm._v("Длина")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepLengthSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepLengthSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepLengthSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepLengthSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "sweepLengthSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-4" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: {
+                    type: "checkbox",
+                    id: "strataEdgeOutOneEdgeCrackEnable"
+                  }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "strataEdgeOutOneEdgeCrackEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v(
+                "Допускаются длиной в долях длины пиломатериала, не более:"
+              ),
+              _c("br"),
+              _c("br"),
+              _vm._v("Неглубокие"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeOutOneEdgeNonDeepCrackSize0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeOutOneEdgeNonDeepCrackSize1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeOutOneEdgeNonDeepCrackSize2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeOutOneEdgeNonDeepCrackSize3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeOutOneEdgeNonDeepCrackSize4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "tab-5" } },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: {
+                    type: "checkbox",
+                    id: "strataEdgeThrouthCrackEnable"
+                  }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "strataEdgeThrouthCrackEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Допускаются длиной, мм, не более:"),
+              _c("br"),
+              _c("br"),
+              _vm._v("Неглубокие"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeThrouthCrackSize0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeThrouthCrackSize1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeThrouthCrackSize2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeThrouthCrackSize3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "strataEdgeThrouthCrackSize4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane",
+            attrs: { role: "tabpanel", id: "tab-11" }
+          },
+          [
+            _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "barkEnable" }
+                }),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "barkEnable" }
+                  },
+                  [_vm._v("Разрешить")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("Отборный")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("1 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("2 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("3 сорт")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col text-center" }, [
+                _c("span", [_vm._v("4 сорт")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("В пиломатериалах толщиной до 40 мм:"),
+              _c("br"),
+              _c("br"),
+              _vm._v("Допускается шириной на пласти от каждой кромки, мм"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40FromEdgeSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40FromEdgeSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40FromEdgeSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40FromEdgeSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40FromEdgeSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Допускается шириной на кромке, мм:"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40OnEdgeSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40OnEdgeSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40OnEdgeSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40OnEdgeSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40OnEdgeSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Допускается протяженностью на кромке, %, от длины"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40ExtLengthSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40ExtLengthSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40ExtLengthSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40ExtLengthSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkTo40ExtLengthSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _c("br"),
+              _vm._v("В пиломатериалах толщиной 40 мм и более:"),
+              _c("br"),
+              _c("br"),
+              _c("br"),
+              _vm._v("Допускается шириной на пласти от каждой кромки, мм"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40FromEdgeSize0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40FromEdgeSize1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40FromEdgeSize2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40FromEdgeSize3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40FromEdgeSize4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Допускается шириной на кромке, мм:"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkFrom40OnEdgeSize0s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkFrom40OnEdgeSize1s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkFrom40OnEdgeSize2s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkFrom40OnEdgeSize3s" }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: { type: "number", id: "barkFrom40OnEdgeSize4s" }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("br"),
+              _vm._v("Допускается протяженностью на кромке, %, от длины"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40ExtLengthSize0s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40ExtLengthSize1s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40ExtLengthSize2s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40ExtLengthSize3s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col",
+                  staticStyle: { border: "3px inset grey" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("span", [_vm._v("Размер")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-6" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          id: "barkFrom40ExtLengthSize4s"
+                        }
+                      })
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/FilterComponent.vue?vue&type=template&id=96c7acf8&scoped=true&":
 /*!*****************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Statistics/FilterComponent.vue?vue&type=template&id=96c7acf8&scoped=true& ***!
@@ -59156,6 +69616,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid pl-0" }, [
+    _vm._m(0),
+    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "title-query mb-3" }, [
         _vm._v(
@@ -59163,105 +69625,338 @@ var render = function() {
             _vm._s(_vm.val.startTime) +
             " по " +
             _vm._s(_vm.val.endTime) +
-            "; Смены: 1, 2;"
+            "; Смены: " +
+            _vm._s(_vm.val.smena) +
+            ";"
         )
       ])
     ]),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row", staticStyle: { "margin-bottom": "70px" } },
+      {
+        staticClass: "row",
+        staticStyle: { "margin-bottom": "70px", "page-break-after": "always" }
+      },
       [
-        _c("div", { staticClass: "col-7" }, [
+        _c("div", { staticClass: "col-xl-7 col-lg-12 d-print-block" }, [
           _c("div", { staticClass: "table-responsive" }, [
-            _c("table", { staticClass: "table table-dark" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("tbody", [
-                _c("tr", [
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.val.inpVolume) +
-                        "\n                            "
-                    )
+            _c(
+              "table",
+              { staticClass: "table table-dark", attrs: { id: "tSort" } },
+              [
+                _c("tbody", [
+                  _c("tr", [
+                    _c("td", { staticClass: "text-left" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\tВходной объем, м³\n\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-center" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-right",
+                          staticStyle: { width: "400px", height: "auto" }
+                        },
+                        [
+                          _c("span", [_vm._v(_vm._s(_vm.val.inpVolume))]),
+                          _vm._v(" "),
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                fill: "white",
+                                width: "10px",
+                                height: "10px"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  x: "-2",
+                                  y: "-2",
+                                  width: "10",
+                                  height: "10"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.val.sortVolume) +
-                        "\n                            "
-                    )
+                  _c("tr", [
+                    _c("td", { staticClass: "text-left" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\tОтсортированный объем, м³\n\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-center" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-right",
+                          staticStyle: { width: "400px", height: "auto" }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(_vm.val.sortVolume) +
+                              "\n\t\t\t\t\t\t\t\t"
+                          ),
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                fill: "#B54C76",
+                                width: "10px",
+                                height: "10px"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  x: "-2",
+                                  y: "-2",
+                                  width: "10",
+                                  height: "10"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.val.outputVolume) +
-                        "\n                            "
-                    )
+                  _c("tr", [
+                    _c("td", { staticClass: "text-left" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\tВыгруженный объем на политер, м³\n\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-center" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-right",
+                          staticStyle: { width: "400px", height: "auto" }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(_vm.val.outputVolume) +
+                              "\n\t\t\t\t\t\t\t\t"
+                          ),
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                fill: "#FF7D75",
+                                width: "10px",
+                                height: "10px"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  x: "-2",
+                                  y: "-2",
+                                  width: "10",
+                                  height: "10"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.val.toPaletka) +
-                        "\n                            "
-                    )
+                  _c("tr", [
+                    _c("td", { staticClass: "text-left" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t   Выгруженный объем на полетку, м³\n\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-center" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-right",
+                          staticStyle: { width: "400px", height: "auto" }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(_vm.val.toPaletka) +
+                              "\n\t\t\t\t\t\t\t\t"
+                          ),
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                fill: "#B9E4F6",
+                                width: "10px",
+                                height: "10px"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  x: "-2",
+                                  y: "-2",
+                                  width: "10",
+                                  height: "10"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.val.inKarman) +
-                        "\n                            "
-                    )
+                  _c("tr", [
+                    _c("td", { staticClass: "text-left" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t   Остаток в карманах, м³\n\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-center" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-right",
+                          staticStyle: { width: "400px", height: "auto" }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(_vm.val.inKarman) +
+                              "\n\t\t\t\t\t\t\t\t"
+                          ),
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                fill: "#8B699A",
+                                width: "10px",
+                                height: "10px"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  x: "-2",
+                                  y: "-2",
+                                  width: "10",
+                                  height: "10"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.val.chipsVolume) +
-                        "\n                            "
-                    )
-                  ])
+                  _c("tr", [
+                    _c("td", { staticClass: "text-left" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t   Объем щепы, м³\n\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-center" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "text-right",
+                          staticStyle: { width: "400px", height: "auto" }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(_vm.val.chipsVolume) +
+                              "\n\t\t\t\t\t\t\t\t"
+                          ),
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                fill: "#B9DE9C",
+                                width: "10px",
+                                height: "10px"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  x: "-2",
+                                  y: "-2",
+                                  width: "10",
+                                  height: "10"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1)
                 ])
-              ])
-            ])
+              ]
+            )
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-5 d-flex justify-content-end" }, [
-          _c(
-            "div",
-            {
-              staticClass: "chart",
-              staticStyle: { "margin-top": "41px", "padding-right": "30px" }
-            },
-            [
-              _c("highcharts", {
-                ref: "highcharts",
-                attrs: { options: _vm.volume }
-              })
-            ],
-            1
-          )
-        ])
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-xl-5 col-lg-12 d-flex  justify-content-center justify-content-xl-end volumeChart"
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "chart",
+                staticStyle: { "padding-right": "30px" }
+              },
+              [
+                _c("highcharts", {
+                  ref: "highcharts",
+                  attrs: { options: _vm.volume }
+                })
+              ],
+              1
+            )
+          ]
+        )
       ]
     ),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-7" }, [
+      _c("div", { staticClass: "col-xl-7 col-lg-12" }, [
         _c(
           "div",
           {
-            staticClass: "table-responsive",
-            staticStyle: { height: "300px", "overflow-y": "scroll" }
+            staticClass: "table-responsive tableSort",
+            staticStyle: { height: "400px", "overflow-y": "scroll" }
           },
           [
             _c("table", { staticClass: "table table-dark" }, [
-              _vm._m(1),
+              _vm._m(2),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -59269,43 +69964,41 @@ var render = function() {
                   return _c("tr", [
                     _c("td", { staticClass: "text-center" }, [
                       _vm._v(
-                        "\n                                " +
+                        "\n\t\t\t\t\t\t\t\t" +
                           _vm._s(i.height_l) +
                           "x" +
                           _vm._s(i.width_l) +
                           "x" +
                           _vm._s(i.length_l) +
-                          "\n                            "
+                          "\n\t\t\t\t\t\t\t"
                       )
                     ]),
                     _vm._v(" "),
                     _c("td", { staticClass: "text-center" }, [
                       _vm._v(
-                        "\n                                " +
+                        "\n\t\t\t\t\t\t\t\t" +
                           _vm._s(i.sort) +
-                          "\n                            "
+                          "\n\t\t\t\t\t\t\t"
                       )
                     ]),
                     _vm._v(" "),
                     _c("td", { staticClass: "text-center" }, [
                       _vm._v(
-                        "\n                                " +
+                        "\n\t\t\t\t\t\t\t\t" +
                           _vm._s(i.count) +
-                          "\n                            "
+                          "\n\t\t\t\t\t\t\t"
                       )
                     ]),
                     _vm._v(" "),
                     _c("td", { staticClass: "text-center" }, [
-                      _vm._v(
-                        "\n                                100\n                            "
-                      )
+                      _vm._v("\n\t\t\t\t\t\t\t\t100\n\t\t\t\t\t\t\t")
                     ]),
                     _vm._v(" "),
                     _c("td", { staticClass: "text-center" }, [
                       _vm._v(
-                        "\n                                " +
+                        "\n\t\t\t\t\t\t\t\t" +
                           _vm._s(i.volume) +
-                          "\n                            "
+                          "\n\t\t\t\t\t\t\t"
                       )
                     ])
                   ])
@@ -59317,22 +70010,29 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-5 d-flex justify-content-end" }, [
-        _c(
-          "div",
-          {
-            staticClass: "chart",
-            staticStyle: { "margin-top": "41px", "padding-right": "30px" }
-          },
-          [
-            _c("highcharts", {
-              ref: "highcharts",
-              attrs: { options: _vm.board }
-            })
-          ],
-          1
-        )
-      ])
+      _c(
+        "div",
+        {
+          staticClass:
+            "col-xl-5 col-lg-12 d-flex justify-content-center justify-content-xl-end sortChart"
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "chart",
+              staticStyle: { "margin-top": "41px", "padding-right": "30px" }
+            },
+            [
+              _c("highcharts", {
+                ref: "highcharts",
+                attrs: { options: _vm.board }
+              })
+            ],
+            1
+          )
+        ]
+      )
     ]),
     _vm._v(" "),
     _c(
@@ -59340,7 +70040,9 @@ var render = function() {
       { attrs: { id: "smeny" } },
       [_c("highcharts", { ref: "highcharts", attrs: { options: _vm.smena } })],
       1
-    )
+    ),
+    _vm._v(" "),
+    _vm._m(3)
   ])
 }
 var staticRenderFns = [
@@ -59348,37 +70050,43 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("Входной объем, м³")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("Отсортированный объем, м³")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("Выгруженный "),
-          _c("br"),
-          _vm._v(" объем на политер, м³")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("Выгруженный "),
-          _c("br"),
-          _vm._v(" объем на полетку, м³")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("Остаток в карманах, м³")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("Объем щепы, м³")
-        ])
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "modal fade", attrs: { id: "myModal" } }, [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "modal-body",
+                  staticStyle: { color: "black", "text-align": "center" },
+                  attrs: { id: "bodyModal" }
+                },
+                [
+                  _c("h4", [_vm._v("Ожидайте загрузку данных")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "progress-container mt-2 mb-1" }, [
+                    _c("div", { staticClass: "progress" }, [
+                      _c("div", { staticClass: "progress-bar" }, [
+                        _c("div", { staticClass: "progress-shadow" })
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("td"), _c("td")])
   },
   function() {
     var _vm = this
@@ -59395,7 +70103,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("отсортированных досок, шт")
+          _vm._v("Отсортированных досок, шт")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
@@ -59407,6 +70115,57 @@ var staticRenderFns = [
         ])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row text-nowrap d-none d-print-inline-flex",
+        staticStyle: { "padding-top": "41px" }
+      },
+      [
+        _c("div", { staticClass: "col-6" }, [
+          _c("span", [
+            _c("br"),
+            _vm._v("__________________________________________"),
+            _c("br")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("span", [_c("br"), _vm._v("________________________"), _c("br")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c(
+            "span",
+            {
+              staticClass: "d-xl-flex align-items-xl-end",
+              staticStyle: { "border-top": "initial" }
+            },
+            [_c("br"), _vm._v("________________________"), _c("br")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-6" }, [
+          _c(
+            "span",
+            {
+              staticClass: "d-xl-flex align-items-xl-end",
+              staticStyle: { "border-top": "initial" }
+            },
+            [_vm._v("ФИО, должность")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [_c("span", [_vm._v("Дата")])]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [_c("span", [_vm._v("Подпись")])])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -59489,342 +70248,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac& ***!
-  \***************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c("ul", { staticClass: "nav nav-tabs" }, [
-      _c("li", { staticClass: "nav-item" }, [
-        _c(
-          "span",
-          {
-            staticClass: "nav-link",
-            class: { active: _vm.CurrentNavItemPicture === "original" },
-            on: {
-              click: function($event) {
-                return _vm.setCurrentNavItemPicture("original")
-              }
-            }
-          },
-          [_vm._v("Список рецептов")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "nav-item" }, [
-        _c(
-          "span",
-          {
-            staticClass: "nav-link",
-            class: { active: _vm.CurrentNavItemPicture === "x_Ray" },
-            on: {
-              click: function($event) {
-                return _vm.setCurrentNavItemPicture("x_Ray")
-              }
-            }
-          },
-          [_vm._v("Изменение рецепта")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "tab-content" }, [
-      _c("div", { staticClass: "table-responsive" }, [
-        _c("table", { staticClass: "table table-dark" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.databoards, function(item) {
-              return _c("tr", [
-                _c("td", [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.id) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-nowrap" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.time) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.Width) +
-                      "x" +
-                      _vm._s(item.Height) +
-                      "x" +
-                      _vm._s(item.Length) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-right text-capitalize" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(
-                        (item.Width * item.Width * item.Length).toFixed(2)
-                      ) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-center text-capitalize" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.Type) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-right" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.Sort) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticClass: "text-right",
-                    class: { status1: item.Suchki }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.Suchki) +
-                        "\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticClass: "text-right",
-                    class: { status2: item.Treschiny }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.Treschiny) +
-                        "\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticClass: "text-right",
-                    class: { status3: item.Svievatist }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.Svievatist) +
-                        "\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-right" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.Prorost) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticClass: "text-right",
-                    class: { status4: item.Zabolon }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.Zabolon) +
-                        "\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-right" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.Plesen) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  { staticClass: "text-right", class: { status5: item.Gnil } },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.Gnil) +
-                        "\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticClass: "text-right",
-                    class: { status6: item.Sineva }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.Sineva) +
-                        "\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  { staticClass: "text-right", class: { status7: item.Obzol } },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(item.Obzol) +
-                        "\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-right" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.Mech) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-right" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(item.Piatna) +
-                      "\n                    "
-                  )
-                ])
-              ])
-            }),
-            0
-          )
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("№")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Время снимка")]),
-        _vm._v(" "),
-        _c(
-          "th",
-          { staticClass: "text-right text-nowrap", attrs: { scope: "col" } },
-          [_vm._v("Ш×В×Т, м")]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          { staticClass: "text-right text-nowrap", attrs: { scope: "col" } },
-          [_vm._v("Объем, м3")]
-        ),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
-          _vm._v("Тип древесины")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Сорт")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Сучки")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Трещины")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Свилеватость")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Прорость")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Забольнь")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Плесень")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Гниль")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Синева")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Обзол")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Механические повреждения")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
-          _vm._v("Пятна")
-        ])
-      ])
-    ])
-  }
-]
 render._withStripped = true
 
 
@@ -72331,6 +82754,249 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Recipes/ParametrsRecipeFir.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Recipes/ParametrsRecipeFir.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ParametrsRecipeFir_vue_vue_type_template_id_26604859___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ParametrsRecipeFir.vue?vue&type=template&id=26604859& */ "./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=template&id=26604859&");
+/* harmony import */ var _ParametrsRecipeFir_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ParametrsRecipeFir.vue?vue&type=script&lang=js& */ "./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ParametrsRecipeFir_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ParametrsRecipeFir_vue_vue_type_template_id_26604859___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ParametrsRecipeFir_vue_vue_type_template_id_26604859___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Recipes/ParametrsRecipeFir.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ParametrsRecipeFir_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ParametrsRecipeFir.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ParametrsRecipeFir_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=template&id=26604859&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=template&id=26604859& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ParametrsRecipeFir_vue_vue_type_template_id_26604859___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ParametrsRecipeFir.vue?vue&type=template&id=26604859& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/ParametrsRecipeFir.vue?vue&type=template&id=26604859&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ParametrsRecipeFir_vue_vue_type_template_id_26604859___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ParametrsRecipeFir_vue_vue_type_template_id_26604859___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/SidebarNavComponent.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/Recipes/SidebarNavComponent.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SidebarNavComponent_vue_vue_type_template_id_078ff6f1_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true& */ "./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true&");
+/* harmony import */ var _SidebarNavComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SidebarNavComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SidebarNavComponent_vue_vue_type_style_index_0_id_078ff6f1_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css& */ "./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _SidebarNavComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SidebarNavComponent_vue_vue_type_template_id_078ff6f1_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SidebarNavComponent_vue_vue_type_template_id_078ff6f1_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "078ff6f1",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Recipes/SidebarNavComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarNavComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css&":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_style_index_0_id_078ff6f1_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=style&index=0&id=078ff6f1&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_style_index_0_id_078ff6f1_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_style_index_0_id_078ff6f1_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_style_index_0_id_078ff6f1_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_style_index_0_id_078ff6f1_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_style_index_0_id_078ff6f1_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_template_id_078ff6f1_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/SidebarNavComponent.vue?vue&type=template&id=078ff6f1&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_template_id_078ff6f1_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarNavComponent_vue_vue_type_template_id_078ff6f1_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/TabTableComponent.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Recipes/TabTableComponent.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TabTableComponent_vue_vue_type_template_id_6464a042_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true& */ "./resources/js/components/Recipes/TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true&");
+/* harmony import */ var _TabTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TabTableComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Recipes/TabTableComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TabTableComponent_vue_vue_type_style_index_0_id_6464a042_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css& */ "./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TabTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TabTableComponent_vue_vue_type_template_id_6464a042_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TabTableComponent_vue_vue_type_template_id_6464a042_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6464a042",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Recipes/TabTableComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/TabTableComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/TabTableComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TabTableComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css& ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_style_index_0_id_6464a042_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=style&index=0&id=6464a042&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_style_index_0_id_6464a042_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_style_index_0_id_6464a042_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_style_index_0_id_6464a042_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_style_index_0_id_6464a042_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_style_index_0_id_6464a042_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Recipes/TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/Recipes/TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_template_id_6464a042_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Recipes/TabTableComponent.vue?vue&type=template&id=6464a042&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_template_id_6464a042_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TabTableComponent_vue_vue_type_template_id_6464a042_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Statistics/FilterComponent.vue":
 /*!****************************************************************!*\
   !*** ./resources/js/components/Statistics/FilterComponent.vue ***!
@@ -72411,7 +83077,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TablesComponent_vue_vue_type_template_id_7e0a9fb7_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TablesComponent.vue?vue&type=template&id=7e0a9fb7&scoped=true& */ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=template&id=7e0a9fb7&scoped=true&");
 /* harmony import */ var _TablesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablesComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _TablesComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TablesComponent.vue?vue&type=style&index=1&lang=css& */ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css&");
+/* harmony import */ var _TablesComponent_vue_vue_type_style_index_2_lang_css___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TablesComponent.vue?vue&type=style&index=2&lang=css& */ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css&");
+/* harmony import */ var _TablesComponent_vue_vue_type_style_index_3_lang_css___WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TablesComponent.vue?vue&type=style&index=3&lang=css& */ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 
@@ -72419,7 +83091,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_5__["default"])(
   _TablesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _TablesComponent_vue_vue_type_template_id_7e0a9fb7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _TablesComponent_vue_vue_type_template_id_7e0a9fb7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -72448,6 +83120,54 @@ component.options.__file = "resources/js/components/Statistics/TablesComponent.v
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablesComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css& ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablesComponent.vue?vue&type=style&index=1&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=1&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css& ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_2_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablesComponent.vue?vue&type=style&index=2&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=2&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_2_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_2_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_2_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_2_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_2_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css& ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_3_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablesComponent.vue?vue&type=style&index=3&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Statistics/TablesComponent.vue?vue&type=style&index=3&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_3_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_3_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_3_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_3_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TablesComponent_vue_vue_type_style_index_3_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -72538,75 +83258,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/TabRecipesTableComponent.vue":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/TabRecipesTableComponent.vue ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TabRecipesTableComponent_vue_vue_type_template_id_ce9917ac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac& */ "./resources/js/components/TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac&");
-/* harmony import */ var _TabRecipesTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TabRecipesTableComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/TabRecipesTableComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _TabRecipesTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TabRecipesTableComponent_vue_vue_type_template_id_ce9917ac___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _TabRecipesTableComponent_vue_vue_type_template_id_ce9917ac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/TabRecipesTableComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/TabRecipesTableComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/TabRecipesTableComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TabRecipesTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TabRecipesTableComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TabRecipesTableComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TabRecipesTableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac&":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/components/TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac& ***!
-  \*********************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TabRecipesTableComponent_vue_vue_type_template_id_ce9917ac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TabRecipesTableComponent.vue?vue&type=template&id=ce9917ac&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TabRecipesTableComponent_vue_vue_type_template_id_ce9917ac___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TabRecipesTableComponent_vue_vue_type_template_id_ce9917ac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/dashboard.js":
 /*!***********************************!*\
   !*** ./resources/js/dashboard.js ***!
@@ -72645,9 +83296,11 @@ Vue.component('data-boards-table-component', __webpack_require__(/*! ./component
 Vue.component('current-board-table-component', __webpack_require__(/*! ./components/CurrentBoardsTableComponent.vue */ "./resources/js/components/CurrentBoardsTableComponent.vue")["default"]);
 Vue.component('planning-component', __webpack_require__(/*! ./components/PlanningComponent.vue */ "./resources/js/components/PlanningComponent.vue")["default"]);
 Vue.component('date-time-component', __webpack_require__(/*! ./components/DateTimeComponent.vue */ "./resources/js/components/DateTimeComponent.vue")["default"]);
-Vue.component('tab-recipes-tab-table-component', __webpack_require__(/*! ./components/TabRecipesTableComponent.vue */ "./resources/js/components/TabRecipesTableComponent.vue")["default"]);
 Vue.component('statistics-filter-component', __webpack_require__(/*! ./components/Statistics/FilterComponent.vue */ "./resources/js/components/Statistics/FilterComponent.vue")["default"]);
 Vue.component('statistics-tables-component', __webpack_require__(/*! ./components/Statistics/TablesComponent.vue */ "./resources/js/components/Statistics/TablesComponent.vue")["default"]);
+Vue.component('recipes-sidebar-nav-component', __webpack_require__(/*! ./components/Recipes/SidebarNavComponent.vue */ "./resources/js/components/Recipes/SidebarNavComponent.vue")["default"]);
+Vue.component('recipes-tab-table-component', __webpack_require__(/*! ./components/Recipes/TabTableComponent.vue */ "./resources/js/components/Recipes/TabTableComponent.vue")["default"]);
+Vue.component('recipes-tab-parametrs-fir-component', __webpack_require__(/*! ./components/Recipes/ParametrsRecipeFir.vue */ "./resources/js/components/Recipes/ParametrsRecipeFir.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

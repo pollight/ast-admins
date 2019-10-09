@@ -15,7 +15,8 @@ class CreateMachineInfosTable extends Migration
     {
         Schema::create('machine_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('status_connect')->index();
+            $table->char('pathto', 255)->nullable();
+            $table->boolean('status_connect')->index()->default(false);
             $table->timestamps();
         });
     }

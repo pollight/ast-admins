@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="yandex-verification" content="c56cc8dbd99255bd" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -24,6 +24,22 @@
                 menu.classList.add("hidden");
             }
         }
+        function restartNeiron(){
+            if(!confirm("Вы уверены что хотите перезагрузить нейросеть!?"))
+                {
+                    return;
+                }else{
+                      axios.post('/RestartNeuron').then(function (response) {
+                    var ret = response.data;
+                     console.log(ret);
+                });
+                        axios.post('/RestartNeuron').then(function (response) {
+                    var ret = response.data;
+                    console.log(ret);
+                });
+                }
+        }
+        
     </script>
 
     <!-- Fonts -->
@@ -38,7 +54,7 @@
 <div id="app">
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="sidebar">
+            <div class="sidebar d-print-none">
                 <div class="sidebar-max-height">
 
 
@@ -137,6 +153,9 @@
                                 </li>
                                 <li class="menu-item logs">
                                     <a href="{{ route('dashboard.logs') }}">Логи</a>
+                                </li>
+                                 <li onclick="restartNeiron()" class="menu-item network">
+                                    <a href="#this">Перезагрузка нейросети</a>
                                 </li>
                             </ul>
 

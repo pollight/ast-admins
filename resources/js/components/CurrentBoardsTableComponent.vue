@@ -7,7 +7,7 @@
         </tr>
         <tr>
             <td class="coll-first">Рецепт</td>
-            <td class="coll-second">Для себя</td>
+            <td class="coll-second">{{recipe.Name}}</td>
         </tr>
         <tr>
             <td class="coll-first">Сорт</td>
@@ -33,6 +33,7 @@
             return {
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 currentBoard: [],
+                recipe :  {'Name':null},
             }
         },
         props: [
@@ -50,7 +51,8 @@
 
                 let vue = this;
                 axios.post(vue.routes['get_board_current']).then(function (response) {
-                    vue.currentBoard = response.data;
+                    vue.currentBoard = response.data.databoard;
+                    vue.recipe = response.data.recipe;
                 });
             },
         }

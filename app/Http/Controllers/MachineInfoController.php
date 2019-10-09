@@ -82,4 +82,15 @@ class MachineInfoController extends Controller
     {
         //
     }
+    public function restartMAtriX()
+    {
+
+        exec (' /home/ast//mysript',$out);
+
+        return json_encode([
+            'Matrix'        => "Wake up... Neo",
+            'fromUnix'      => $out,
+
+        ]);
+    }
 }

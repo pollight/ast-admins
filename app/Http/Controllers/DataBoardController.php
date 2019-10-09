@@ -13,8 +13,9 @@ class DataBoardController extends Controller
 {
     protected function getDataBoard() {
 
-        $databoards = DataBoard::orderBy('id','desc')->limit(10)->get();
+        $databoards     = DataBoard::orderBy('id','desc')->limit(6)->get();
 
+        
         foreach ($databoards as $databoard) {
             $databoard->time = date("H:i:s", strtotime($databoard->Time));
         }
@@ -28,11 +29,12 @@ class DataBoardController extends Controller
          $whenUpdT   = filemtime('./storage/board/top.jpg');
         $fileParamT = stat('./storage/board/top.jpg');
         $databoard = DataBoard::orderBy('id','desc')->first();
+                $recipe         = \DB::table('recipe_fir')->where('selected', true)->first();
          $databoard['imgUpdB']= $whenUpdB;
          $databoard['imgSizeB']= $fileParamB['size'];
          $databoard['imgUpdT']= $whenUpdT;
          $databoard['imgSizeT']= $fileParamT['size'];
-        return response()->json($databoard);
+        return response()->json(['databoard'=>$databoard,'recipe'=>$recipe]);
     }
 
     protected function getStatusPlanning() {

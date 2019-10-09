@@ -31,9 +31,17 @@ Route::get('/neural_network', 'DashboardController@neural_network')->name('dashb
 
 
 
+Route::get('/getReport', 'Admin\StatisticsController@creatOtchet');
 
 Route::get('/recepts', 'Recepts@index');
 Route::post('/Addrecepts', 'Recepts@addRecept');
-Route::get('/redactRecept', 'Recepts@redact');
+Route::post('/redactRecept', 'Recepts@redact');
 Route::post('/updateRecepts', 'Recepts@update');
+Route::post('/deleteRecept', 'Recepts@deleteRecept');
+Route::post('/selectrecept', 'Recepts@checRecept');
+Route::post('/RestartNeuron', 'MachineInfoController@restartMAtriX');
+
+Route::get('/recipes/list', 'Admin\RecipeController@getRecipesList')->name('get_recipes_list');
+Route::post('/recipes/create', 'Admin\RecipeController@create')->name('recipes_create');
+Route::post('/recipes/delete', 'Admin\RecipeController@delete')->name('recipes_delete');
 

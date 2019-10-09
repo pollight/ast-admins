@@ -16,8 +16,10 @@ class RecipeFir extends Migration
         Schema::create('recipe_fir', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('Time')->index()->nullable();
-            $table->boolean('selected')->index()->nullable();
+            $table->boolean('selected')->index()->default(false);
             $table->bigInteger('userid')->index()->nullable();
+            $table->string('Name')->unique();
+            $table->string('Gost');
             //Рецепт 1713 Хвойные породы имеется всего 5 сортов 1,2 и 3 сорта, 4 и отборный
             //Обозначения сортов 0s,1s,2s,3s,4s
             // 
@@ -27,7 +29,7 @@ class RecipeFir extends Migration
     //сучки сросшиеся здоровые - healthy knots ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             // разрешение сортировки по ним
             
-            $table->boolean('healthyKnotsEnable')->index()->nullable();
+            $table->boolean('healthyKnotsEnable')->index()->default(false);
             // пластевые и ребровые - OnStrata , размер - Size, кол-во - Amount
             $table->float('healthyKnotsOnStrataSize0s',8,2)->index()->nullable();
             $table->bigInteger('healthyKnotsOnStrataAmount0s')->index()->nullable();
@@ -80,7 +82,7 @@ class RecipeFir extends Migration
 
             //сучки частично сросшиеся здоровые - part healthy knots ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             // разрешение сортировки по ним
-            $table->boolean('partHealthyKnotsEnable')->index()->nullable();
+            $table->boolean('partHealthyKnotsEnable')->index()->default(false);
             // пластевые и ребровые - OnStrata , размер - Size, кол-во - Amount
             $table->float('partHealthyKnotsOnStrataSize0s',8,2)->index()->nullable();
             $table->bigInteger('partHealthyKnotsOnStrataAmount0s')->index()->nullable();
@@ -132,7 +134,7 @@ class RecipeFir extends Migration
             //
             //сучки  выпадающие, загнившие, гнилые** и табачные - bad knots ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             // разрешение сортировки по ним
-            $table->boolean('badKnotsEnable')->index()->nullable();
+            $table->boolean('badKnotsEnable')->index()->default(false);
             //
             $table->float('badKnotsSize0s',8,2)->index()->nullable();
             $table->bigInteger('badKnotsAmount0s')->index()->nullable();
@@ -154,7 +156,7 @@ class RecipeFir extends Migration
             //.......................   
     // Пластевые и кромочные (на обрезных кромках),в том числе с выходом на торец - Strata Edge OutOneEdge cracks ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             // разрешение сортировки по ним
-            $table->boolean('strataEdgeOutOneEdgeCrackEnable')->index()->nullable();
+            $table->boolean('strataEdgeOutOneEdgeCrackEnable')->index()->default(false);
 
             //Допускаются глубиной и длиной Size, количество Amount не более
             //не глубокие - NonDeep
@@ -192,7 +194,7 @@ class RecipeFir extends Migration
            //
             // Пластевые сквозные Strata Edge through, в том числе выходящие на торец ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             // разрешение сортировки по ним
-            $table->boolean('strataEdgeThrouthCrackEnable')->index()->nullable();
+            $table->boolean('strataEdgeThrouthCrackEnable')->index()->default(false);
             //Допускаются общей длиной Size, не более: и в количестве Amount
             $table->float('strataEdgeThrouthCrackSize0s',8,2)->index()->nullable();
             $table->bigInteger('strataEdgeThrouthCrackAmount0s')->index()->nullable();
@@ -213,7 +215,7 @@ class RecipeFir extends Migration
             //Порость - sweep ***************************************************************************************************
             //.......................   
             // разрешение сортировки по ним
-            $table->boolean('sweepEnable')->index()->nullable();
+            $table->boolean('sweepEnable')->index()->default(false);
             //Допускается длиной LengthSize и шириной WidthSize, не более: 
             $table->float('sweepLengthSize0s',8,2)->index()->nullable();
             $table->float('sweepWidthSize0s',8,2)->index()->nullable();
@@ -234,7 +236,7 @@ class RecipeFir extends Migration
             //Забалонь - sapwood ***************************************************************************************************
             //....................... 
             // разрешение сортировки по ним
-            $table->boolean('sapwoodEnable')->index()->nullable();
+            $table->boolean('sapwoodEnable')->index()->default(false);
             // размер Size
             $table->float('sapwoodSize0s')->index()->nullable();
             $table->float('sapwoodSize1s')->index()->nullable();
@@ -246,7 +248,7 @@ class RecipeFir extends Migration
             //Плесень - mold ***************************************************************************************************
             //.......................
             // разрешение сортировки по ним
-            $table->boolean('moldEnable')->index()->nullable();    
+            $table->boolean('moldEnable')->index()->default(false);  
             // размер Size
             $table->bigInteger('moldSize0s')->index()->nullable();
             $table->bigInteger('moldSize1s')->index()->nullable();
@@ -258,7 +260,7 @@ class RecipeFir extends Migration
             //Гниль - rot   ***************************************************************************************************
             //.......................
             // разрешение сортировки по ним
-            $table->boolean('rotEnable')->index()->nullable();
+            $table->boolean('rotEnable')->index()->default(false);
             // допускается Allowed, размеры size
             $table->bigInteger('rotSize0s')->index()->nullable();
             //
@@ -274,7 +276,7 @@ class RecipeFir extends Migration
             //Обзол - bark   ***************************************************************************************************
             //.......................
             // разрешение сортировки по ним
-            $table->boolean('barkEnable')->index()->nullable();
+            $table->boolean('barkEnable')->index()->default(false);
             // В пиломатериалах толщиной до 40мм - barkTo40 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             // на пласти от каждой кромки FromEdgeSize
             $table->bigInteger('barkTo40FromEdgeSize0s')->index()->nullable();
@@ -350,7 +352,7 @@ class RecipeFir extends Migration
            //Механические повреждения - mechanicalDamage   ***************************************************************************************************
             //.......................
             // разрешение сортировки по ним
-            $table->boolean('mechanicalDamageEnable')->index()->nullable();
+            $table->boolean('mechanicalDamageEnable')->index()->default(false);
             //размер - Size |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             $table->float('mechanicalDamageSize0s',8,2)->index()->nullable();
             $table->float('mechanicalDamageSize1s',8,2)->index()->nullable();
@@ -362,7 +364,7 @@ class RecipeFir extends Migration
             //Синева - blue ***************************************************************************************************
         	//.......................
         	// разрешение сортировки по ним
-        	$table->boolean('blueEnable')->index()->nullable();
+        	$table->boolean('blueEnable')->index()->default(false);
         	//
         	// поверхностная - surfaceBlue .  размер size ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
         	$table->bigInteger('blueSize0s')->index()->nullable();

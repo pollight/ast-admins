@@ -21,6 +21,7 @@ class CreateStatisticPolitersTable extends Migration
             $table->bigInteger('ColBoard')->index();
             $table->integer('sort')->index();
             $table->integer('karman')->index();
+            $table->bigInteger('Priznak')->index()->nullable();
             $table->dateTime('Time')->index();
             $table->timestamps();
         });
