@@ -30,11 +30,13 @@ class DataBoardController extends Controller
         $fileParamT = stat('./storage/board/top.jpg');
         $databoard = DataBoard::orderBy('id','desc')->first();
                 $recipe         = \DB::table('recipe_fir')->where('selected', true)->first();
+                $machine_infos         = \DB::table('machine_infos')->first();
+          
          $databoard['imgUpdB']= $whenUpdB;
          $databoard['imgSizeB']= $fileParamB['size'];
          $databoard['imgUpdT']= $whenUpdT;
          $databoard['imgSizeT']= $fileParamT['size'];
-        return response()->json(['databoard'=>$databoard,'recipe'=>$recipe]);
+        return response()->json(['databoard'=>$databoard,'recipe'=>$recipe,'machine'=>$machine_infos]);
     }
 
     protected function getStatusPlanning() {
@@ -43,8 +45,9 @@ class DataBoardController extends Controller
         $status = 0;
         if(!empty($planning))
             $status = $planning->status;
-
-        return response()->json($status);
+         $machine_infos         = \DB::table('machine_infos')->first();
+      \DB::table('machine_infos')->where('id', 3)->update(['status_connect' => false]);
+        return response()->json(['status'=>$status,'machine'=>$machine_infos]);
     }
 
     protected function getLastModified() {

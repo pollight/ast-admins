@@ -33,9 +33,30 @@
                     var ret = response.data;
                      console.log(ret);
                 });
-                        axios.post('/RestartNeuron').then(function (response) {
+                }
+        }
+        function restartServer(){
+            if(!confirm("Вы уверены что хотите перезагрузить сервер!?"))
+                {
+                    return;
+                }else{
+                    var result = prompt('Введите команду : ');
+                    if(result==='reboot'){
+                        axios.post('/RestartServer').then(function (response) {
+                        var ret = response.data;
+                        console.log(ret);
+                        });
+                    }
+                }
+        }
+        function startLesson(){
+            if(!confirm("Вы уверены что хотите Запустить обучение нейросети!?"))
+                {
+                    return;
+                }else{
+                      axios.post('/startLesson').then(function (response) {
                     var ret = response.data;
-                    console.log(ret);
+                     console.log(ret);
                 });
                 }
         }
@@ -148,14 +169,24 @@
                                 <li class="menu-item diagnostics">
                                     <a href="{{ route('dashboard.diagnostics') }}">Диагностика</a>
                                 </li>
-                                <li class="menu-item network">
-                                    <a href="{{ route('dashboard.neural_network') }}">Обучение нейросети</a>
+                                <li class="menu-item network dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">
+                                    <!--  <a href="{{ route('dashboard.neural_network') }}"> --> <a href="#this">Обучение нейросети</a>
                                 </li>
+
+                                <div class="row sidebar-container dropdown-menu" aria-labelledby="dropdownMenu2"   style="background-color:#333540; bo"> <ul class="menu">
+    <li class="dropdown-item menu-item network "><a  href="storage/install.zip">Скачать программу для обучения</a> </li>
+
+    <li class="menu-item network dropdown-item" onclick="startLesson()" ><a href="#this">Запустить обучение</a></li></ul>
+  </div>
+
                                 <li class="menu-item logs">
                                     <a href="{{ route('dashboard.logs') }}">Логи</a>
                                 </li>
                                  <li onclick="restartNeiron()" class="menu-item network">
                                     <a href="#this">Перезагрузка нейросети</a>
+                                </li>
+                                 <li onclick="restartServer()" class="menu-item network">
+                                    <a href="#this">Перезагрузка сервера</a>
                                 </li>
                             </ul>
 
@@ -184,3 +215,9 @@
 
 </body>
 </html>
+<style type="text/css">
+   li.dropdown-item:hover{
+    border-color: #FF5E0C;
+    background-color: #333540;
+   }
+</style>

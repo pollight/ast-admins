@@ -52,6 +52,8 @@ class StatisticsController extends Controller
         $smenaArr 				= [];
         $dayArr                 = [];
         $arrStandatrBoard 		= [];
+        $arrInpV1sm             = [];
+        $arrInpV2sm             = [];
         $H 						= [16,19,22,25,32,40,44,50,60];																									/// сандартный ряд толщины досок по ГОСТ
         $W 						= [50,75,100,125,150,175,200,225,250];																								/// стандартный ряд ширины досок по ГОСТ
         $L 						= [3,3.5,4,4.5,5,5.5,6];																										/// длинны досок которые может померить линия
@@ -79,17 +81,21 @@ class StatisticsController extends Controller
 ////////////////// ======= 			РАЗБОР ДАННЫХ ИЗ ЗАПРОСА 			=======  	/////////////////////////////////////////////////////////////////////////
 
     	$timestamp 				= date('Y-m-d H:i:s',$_time);
-		$start_day 				= date('Y-m-d H:i:s',mktime(0, 0, 0, date("m", $_time), date("d", $_time), date("y", $_time))-(86400*2));
+		$start_day 			= date('Y-m-d H:i:s',mktime(0, 0, 0, date("m", $_time), date("d", $_time), date("y", $_time))-(86400*2));
         if($Req['start'] && $Req['end']){
             $timestamp          =  date('Y-m-d H:i:s',strtotime($Req['end']));
-            $endUnix            = strtotime($timestamp)+86399;
+            $end_day_end   = date('Y-m-d H:i:s',mktime(23, 59, 59, date("m", strtotime($Req['end'])), date("d", strtotime($Req['end'])), date("y", strtotime($Req['end']))));
+            $endUnix            = strtotime($end_day_end)+12800;
             $timestampEndDay    =  date('Y-m-d H:i:s',$endUnix);
             $start_day          =  date('Y-m-d H:i:s',strtotime($Req['start']));
         }
         else
         {
-        	$timestampEndDay 				= date('Y-m-d H:i:s',$_time);
-        	        $endUnix                = strtotime($timestamp);
+        	
+            $end_day_end   = date('Y-m-d H:i:s',mktime(23, 59, 59, date("m", $_time), date("d", $_time), date("y", $_time)));
+            $endUnix            = strtotime($end_day_end)+12800;
+            $timestampEndDay                = date('Y-m-d H:i:s',$endUnix);
+        	   //     $endUnix                = strtotime($timestamp);
         }
 ////////////////// ======= 				КОНЕЦ			=======  	//////////////////////////////////////////////////////////////////////////////////////
 
@@ -108,6 +114,12 @@ class StatisticsController extends Controller
         $politer 				= \DB::table('statistic_politers')
                 				->whereBetween('Time',[$start_day,$timestampEndDay] )																				/// Получаем данные из БД по политеру
                 				->get();
+        $inputVolume               = \DB::table('input_volume')
+                                ->whereBetween('Time',[$start_day,$timestampEndDay] )                                                                               /// Получаем данные из БД по входному объему
+                                ->get();
+        $paletka_board               = \DB::table('paletka_board')
+                                ->whereBetween('Time',[$start_day,$timestampEndDay] )                                                                               /// Получаем данные из БД по слоям которые отправили на палетку
+                                ->get();
 
 ////////////////// ======= 				КОНЕЦ			=======  	//////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,35 +134,35 @@ class StatisticsController extends Controller
 
         $startUnix				= strtotime($start_day);
         $startDay0				= mktime(0, 0, 0, date("m", $startUnix), date("d", $startUnix), date("y", $startUnix));
-        $startSm                = $startDay0 + 10800;  
-        $promezhutok 			= $endUnix-$startDay0;
+        $startSm                = $startDay0 + 10800+7200;  
+        $promezhutok 			= $endUnix-$startDay0-86400;
         $valDayInPromezhutok	= ceil($promezhutok/86400);
-        $endSmena  				= $startDay0+59400;
+        $endSmena  				= $startDay0+69800+7200;
 
 
         if($endSmena>=$startUnix){                                                                                                                          		/// определяем с какой смены начали запрос
         	array_push($smenaArr,array('startSmena'=>$startSm,'endSmena'=>$endSmena,"col"=>0,"smena"=>1));
-        	array_push($smenaArr,array('startSmena'=>$endSmena,'endSmena'=>$startDay0+86400+10800,"col"=>0,"smena"=>2));
-            array_push($dayArr,['date'=>date('Y-m-d',$startDay0),'col'=>0,'smena'=>1,'smena'=>2]);
+        	array_push($smenaArr,array('startSmena'=>$endSmena,'endSmena'=>$startDay0+86400+10800+7200,"col"=>0,"smena"=>2));
+            array_push($dayArr,date('Y-m-d',$startDay0));
         }
         else
         {
-        	array_push($smenaArr,array('startSmena'=>$endSmena,'endSmena'=>$startDay0+86400+10800,"col"=>0,"smena"=>2));
-            array_push($dayArr,[date('Y-m-d',$endSmena),'col'=>0,'smena'=>1,'smena'=>2]);	
+        	array_push($smenaArr,array('startSmena'=>$endSmena,'endSmena'=>$startDay0+86400+10800+7200,"col"=>0,"smena"=>2));
+            array_push($dayArr,date('Y-m-d',$endSmena));	
         }
 
         for ($i=1; $i <$valDayInPromezhutok ; $i++) {                                                                                                     			/// создаем массив смен 
         	$nextDay			= $startDay0 + (86400 * $i);
-        	if(($nextDay+59400)<$endUnix)
+        	if(($nextDay+59800+7200)<$endUnix)
             {
-            	array_push($smenaArr,array('startSmena'=>$nextDay+10800,'endSmena'=>$nextDay+59400 ,"col"=>0,"smena"=>1));
-            	array_push($smenaArr,array('startSmena'=>$nextDay+59400,'endSmena'=>$nextDay+86399+10800,"col"=>0,"smena"=>2));
-                array_push($dayArr,[date('Y-m-d'),$nextDay,'col'=>0,'smena'=>1,'smena'=>2]);
+            	array_push($smenaArr,array('startSmena'=>$nextDay+12800+7200,'endSmena'=>$nextDay+59800+7200 ,"col"=>0,"smena"=>1));
+            	array_push($smenaArr,array('startSmena'=>$nextDay+59800+7200,'endSmena'=>$nextDay+86399+10800+7200,"col"=>0,"smena"=>2));
+                array_push($dayArr,date('Y-m-d',$nextDay));
             }
             else
             {
-            	array_push($smenaArr,array('startSmena'=>$nextDay+10800,'endSmena'=>$nextDay+59400,"col"=>0,"smena"=>1));
-                array_push($dayArr,[date('Y-m-d',$nextDay),'col'=>0,'smena'=>1,'smena'=>2]);
+            	array_push($smenaArr,array('startSmena'=>$nextDay+12800+7200,'endSmena'=>$nextDay+59800+7200,"col"=>0,"smena"=>1));
+                array_push($dayArr,date('Y-m-d',$nextDay));
             }          					
         }
 
@@ -216,7 +228,7 @@ class StatisticsController extends Controller
                 $smena=getCode();
                 foreach ($databoard as $key => $value) { 																											///  разбираем данные полученые из базы по условию
 
-                	$vol 		             = (int)$value->Length*((int)$value->Width/1000)*((int)$value->Height/1000);												/// считаем объем теекущей доски
+                	$vol   = (int)$value->Length*((int)$value->Width/1000)*((int)$value->Height/1000);												/// считаем объем теекущей доски
                     
 
             
@@ -268,19 +280,70 @@ class StatisticsController extends Controller
 
                 foreach ($politer as $key => $value) {
                 $volO 		             = (((int)$value->Length/10)*((int)$value->Width/1000)*((int)$value->Height/1000))*$value->ColBoard;	
-                if($value->Priznak){
-                $arrStandatrBoard[$value->Priznak]['volume_out'] = $arrStandatrBoard[$value->Priznak]['volume_out'] + $vol0;								
+                if($value->Priznak && $value->Priznak!=null){
+                $arrStandatrBoard[$value->Priznak]['volume_out'] = $arrStandatrBoard[$value->Priznak]['volume_out'] + $value->ColBoard;								
                 }
                 $outputVolume			 = 	$outputVolume+ $volO;
                 }
+
+                foreach ($paletka_board as $key => $value) {
+                    $volP  = (((int)$value->Length/10)*((int)$value->Width/1000)*((int)$value->Height/1000))*$value->ColBoard;
+                     $toPaletka=$toPaletka+$volP;
+                }
+
+
+
+
+                foreach ($inputVolume as $key => $value) {
+                    foreach ($dayArr as $k => $v) {
+                        $startSm1   = mktime(5, 0, 0, date("m", strtotime($dayArr[$k])), date("d", strtotime($dayArr[$k])), date("y", strtotime($dayArr[$k])));
+                        $endSm1   = mktime(16, 30, 30, date("m", strtotime($dayArr[$k])), date("d", strtotime($dayArr[$k])), date("y", strtotime($dayArr[$k])));
+                        $endSm2   = mktime(2, 0, 0, date("m", strtotime($dayArr[$k])), date("d", strtotime($dayArr[$k]))+1, date("y", strtotime($dayArr[$k])));
+                        if ((int)strtotime($value->Time)>=$startSm1 && (int)strtotime($value->Time)<$endSm1) {
+                            if(isset($arrInpV1sm[$k]))
+                            {
+                                if((int)$arrInpV1sm[$k]<=(int)$value->SumVolume)
+                                {
+                                    $arrInpV1sm[$k]=(int)$value->SumVolume;
+                                }
+                            }
+                            else
+                            {
+                                $arrInpV1sm[$k]=(int)$value->SumVolume;
+                            }
+                        }
+                        if ((int)strtotime($value->Time)>=(int)$endSm1 && (int)strtotime($value->Time)<(int)$endSm2) {
+                            if(isset($arrInpV2sm[$k]))
+                            {
+                                if($arrInpV2sm[$k]<=(int)$value->SumVolume)
+                                {
+                                    $arrInpV2sm[$k]=(int)$value->SumVolume;
+                                }
+                            }
+                            else
+                            {
+                                $arrInpV2sm[$k]=$value->SumVolume;
+                            }
+                        }
+                    }
+                }
+
+
 ////////////////// ======= 				КОНЕЦ 			=======  	//////////////////////////////////////////////////////////////////////////////////////
 
 
+$inpFromPC=0;
 
-
-
-
-
+                if($smena!=1){
+                    foreach ($arrInpV1sm as $key => $value) {
+                        $inpFromPC = $inpFromPC+(int)$value;
+                    }
+                }
+                if($smena!=2){
+                    foreach ($arrInpV2sm as $key => $value) {
+                        $inpFromPC = $inpFromPC+(int)$value;
+                    }
+                }
                 foreach ($arrStandatrBoard as $key => $value1) {
                 	if($value1['count']==0){
                 	unset($arrStandatrBoard[$key]);
@@ -294,7 +357,7 @@ class StatisticsController extends Controller
                 $sortVolume     = round($sortVolume,3);
                 $outputVolume   = round($outputVolume,3);
                 $inpVolume      = round($inpVolume,3);
-                $chipsVolume    = round($inpVolume*1.2-$inpVolume,3);
+                $chipsVolume    = round($inpFromPC-$inpVolume,3);
                 $toPaletka      = round($toPaletka,3);
                 if($smena==1){
                     $smn="2";
@@ -307,7 +370,7 @@ class StatisticsController extends Controller
                 }
                 $retArr=[
                 	"outputVolume"=>$outputVolume,
-                	"inpVolume"=>round($inpVolume*1.2,3),
+                	"inpVolume"=>round($inpFromPC,3),
                 	"chipsVolume"=>$chipsVolume,
                 	"sortVolume"=>$inpVolume,
                     "sortInKarman"=>$sortVolume,
@@ -327,100 +390,13 @@ class StatisticsController extends Controller
                     'arrStandart'=>$arrStandatrBoard,  
                     'req'=>$databoard,
                     'smena'=> $smn,
+                    'arrInp1'=>$arrInpV1sm,
+                    'arrInp2'=>$arrInpV2sm,
             ];
             
     	return response()->json($retArr);
     }
-    protected function sendOtchet()
-    {
-
-
-     function Send($subject = null, $from = null, $fromName = null, $sender = null, $senderName = null, $msgFrom = null, $msgFromName = null, $replyTo = null, $replyToName = null, array $to = array(), array $msgTo = array(), array $msgCC = array(), array $msgBcc = array(), array $lists = array(), array $segments = array(), $mergeSourceFilename = null, $dataSource = null, $channel = null, $bodyHtml = null, $bodyText = null, $charset = null, $charsetBodyHtml = null, $charsetBodyText = null, $encodingType = \ElasticEmailEnums\EncodingType::None, $template = null, array $attachmentFiles = array(), array $headers = array(), $postBack = null, array $merge = array(), $timeOffSetMinutes = null, $poolName = null, $isTransactional = false, array $attachments = array(), $trackOpens = null, $trackClicks = null, $utmSource = null, $utmMedium = null, $utmCampaign = null, $utmContent = null, $bodyAmp = null, $charsetBodyAmp = null) {
-        $arr = array(
-                    'subject' => $subject,
-                    'from' => $from,
-                    'fromName' => $fromName,
-                    'sender' => $sender,
-                    'senderName' => $senderName,
-                    'msgFrom' => $msgFrom,
-                    'msgFromName' => $msgFromName,
-                    'replyTo' => $replyTo,
-                    'replyToName' => $replyToName,
-                    'to' => (count($to) === 0) ? null : join(';', $to),
-                    'msgTo' => (count($msgTo) === 0) ? null : join(';', $msgTo),
-                    'msgCC' => (count($msgCC) === 0) ? null : join(';', $msgCC),
-                    'msgBcc' => (count($msgBcc) === 0) ? null : join(';', $msgBcc),
-                    'lists' => (count($lists) === 0) ? null : join(';', $lists),
-                    'segments' => (count($segments) === 0) ? null : join(';', $segments),
-                    'mergeSourceFilename' => $mergeSourceFilename,
-                    'dataSource' => $dataSource,
-                    'channel' => $channel,
-                    'bodyHtml' => $bodyHtml,
-                    'bodyText' => $bodyText,
-                    'charset' => $charset,
-                    'charsetBodyHtml' => $charsetBodyHtml,
-                    'charsetBodyText' => $charsetBodyText,
-                    'encodingType' => $encodingType,
-                    'template' => $template,
-                    'postBack' => $postBack,
-                    'timeOffSetMinutes' => $timeOffSetMinutes,
-                    'poolName' => $poolName,
-                    'isTransactional' => $isTransactional,
-                    'attachments' => (count($attachments) === 0) ? null : join(';', $attachments),
-                    'trackOpens' => $trackOpens,
-                    'trackClicks' => $trackClicks,
-                    'utmSource' => $utmSource,
-                    'utmMedium' => $utmMedium,
-                    'utmCampaign' => $utmCampaign,
-                    'utmContent' => $utmContent,
-                    'bodyAmp' => $bodyAmp,
-                    'charsetBodyAmp' => $charsetBodyAmp);
-        foreach(array_keys($headers) as $key) {
-            $arr['headers_'.$key] = $key.': '.$headers[$key]; 
-        }
-        foreach(array_keys($merge) as $key) {
-            $arr['merge_'.$key] = $merge[$key]; 
-        }
-
-        return sendRequest('', $arr, "POST", $attachmentFiles);
-    }
-
-    function sendRequest(string $url, array $data = [], string $method = 'POST', array $attachments = [])
-        {
-            $method = strtoupper($method);
-            $options = [];
-            $data['apikey'] = 'd87dba9d-8e1a-4d04-8444-0e933226e419';
-
-
-      $url.= '?'.http_build_query($data, null, '&');
-   
-                  
-
-
-            $url = 'https://api.elasticemail.com/v2/email/send'.$url;
-        $ch = curl_init();
-
-                 curl_setopt($ch, CURLOPT_URL, $url);
-
-// Указываем CURL, что будем отправлять POST запрос     https://api.elasticemail.com/v2/file/load?apikey=94DAF66E-4DF6-4E8E-AF96-D094A8D21DF3&filename=filename.txt
-curl_setopt($ch, CURLOPT_POST, 1);
-
-// Указываем CURL, что будем отправлять POST запрос
-curl_setopt($ch, CURLOPT_POST, 1);
-
-// Передаем массив с полями формы, где field1, field2 - имена тегов, а value1, value2 - значения тегов
-curl_setopt($ch, CURLOPT_POSTFIELDS, array('field1'=>'value1', 'field2'=>'value2', 'file'=>'@/path/to/file'));
-curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_exec($ch);
- curl_close($ch);
-dd($url);
-            return 'yes';
-        }
-$body = '<h2 style="color:red;">Это текст письма для отправки отчетов!!!!</h2>  <p>Перейдите по ссылке для получения отчета   - http://185.6.26.128/getReport</p>';
-Send('Статистика за сутки линии RZC', 'chitsalex@gmail.com', "Статистика за сутки", 'laravel', 'RZC', 'chitsalex@gmail.com', 'RZC', 'valenchits@gmail.com', 'valenchits@gmail.com', ['valenchits@rambler.ru'],array(),array(),array(),array(),array(),array(),null,null,$body);
-
-    }
-
+  
 
     protected function creatOtchet()
     {

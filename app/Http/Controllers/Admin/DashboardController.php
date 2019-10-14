@@ -31,5 +31,28 @@ class DashboardController extends Controller
             'pictures' => $pictures,
             'routes' => $routes,
         ]);
+
+    }
+
+
+    protected function diagnostics()
+    {
+                $routes['get_data_boards'] = route('get_data_boards');
+        $routes['get_board_current'] = route('get_board_current');
+        $routes['get_status_planning'] = route('get_status_planning');
+        $routes['get_last_modified'] = route('get_last_modified');
+         return view('dashboard.diagnostics', [
+            'routes' => $routes,
+        ]);        
+    }
+
+    protected function neural_network()
+    {
+        //return view('dashboard.neural_network');  
+        //View::first('dashboard.diagnostics')         
+    }
+    protected function download()
+    {
+        return response()->download('storage/my.sh');
     }
 }

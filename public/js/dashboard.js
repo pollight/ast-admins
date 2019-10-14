@@ -1881,7 +1881,7 @@ __webpack_require__.r(__webpack_exports__);
     var vue = this;
     setInterval(function () {
       vue.refresh();
-    }, 100);
+    }, 300);
   },
   methods: {
     refresh: function refresh() {
@@ -2128,6 +2128,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+window.noShow = false;
+
+window.help = function () {
+  $('#btnhelp').tooltip();
+};
+
+window.dontShow = function () {
+  window.noShow = true;
+};
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2141,13 +2187,23 @@ __webpack_require__.r(__webpack_exports__);
     var vue = this;
     setInterval(function () {
       vue.refresh();
-    }, 100);
+    }, 3003);
   },
   methods: {
     refresh: function refresh() {
       var vue = this;
       axios.post(vue.routes['get_status_planning']).then(function (response) {
-        vue.status = response.data;
+        vue.status = response.data.status;
+        vue.machine = response.data.machine;
+
+        if (vue.machine.status_connect == false && window.noShow == false) {
+          // /status_connect
+          $('#myModalAlert').modal('show');
+          $('#btnhelp').tooltip();
+          $('#btnreset').tooltip();
+        } else {
+          $('#myModalAlert').modal('hide');
+        }
       });
     }
   }
@@ -5256,7 +5312,8 @@ axios.interceptors.request.use(function (config) {
           "count": 0,
           'volume': 0,
           'sort': 0,
-          'smens': ''
+          'smens': '',
+          'volume_out': 0
         }
       }
     };
@@ -5434,7 +5491,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var rnd = Math.random();
       axios.post(vue.routes['get_board_current']).then(function (response) {
-        vue.currentBoard = response.data; // console.log(response.data);
+        vue.currentBoard = response.data.databoard; // console.log(response.data);
 
         vue.picture1 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['top'] + '?' + vue.currentBoard.imgUpdT + '?' + vue.currentBoard.imgSizeT + ')'; //vue.picture2 = 'background-image: url(' + vue.pictures[vue.CurrentNavItemPicture]['bottom'] + '?' + vue.currentBoard.id + ')';
 
@@ -10023,7 +10080,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* width */\n::-webkit-scrollbar {\n  width: 3px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #383a47;\n}\n \n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #ff5e0c;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #ff5e0c;\n}\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* width */\n::-webkit-scrollbar {\n  width: 3px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #383a47;\n}\n \n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #ff5e0c;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #ff5e0c;\n}\n\n\n", ""]);
 
 // exports
 
@@ -61361,54 +61418,156 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "indicator-current-process",
-      attrs: { id: "indicator-current-process" }
-    },
-    [
-      _c("div", { staticClass: "Planning" }, [
-        _c("div", { staticClass: "left" }, [
-          _c("span", { staticClass: "name" }, [_vm._v("Планирование")]),
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "indicator-current-process",
+        attrs: { id: "indicator-current-process" }
+      },
+      [
+        _c("div", { staticClass: "Planning" }, [
+          _c("div", { staticClass: "left" }, [
+            _c("span", { staticClass: "name" }, [_vm._v("Планирование")]),
+            _vm._v(" "),
+            _c("span", { staticClass: "count" }, [
+              _vm._v(_vm._s(_vm.status) + "%")
+            ])
+          ]),
           _vm._v(" "),
-          _c("span", { staticClass: "count" }, [
-            _vm._v(_vm._s(_vm.status) + "%")
+          _c("div", { staticClass: "right" }, [
+            _c(
+              "svg",
+              {
+                attrs: {
+                  width: "9",
+                  height: "12",
+                  viewBox: "0 0 9 12",
+                  fill: "none",
+                  xmlns: "http://www.w3.org/2000/svg"
+                }
+              },
+              [
+                _c("rect", {
+                  attrs: { width: "3", height: "12", fill: "#FF5E0C" }
+                }),
+                _vm._v(" "),
+                _c("rect", {
+                  attrs: { x: "6", width: "3", height: "12", fill: "#FF5E0C" }
+                })
+              ]
+            )
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "right" }, [
+        _c("div", { staticClass: "progress-bar-planning mb-5" }, [
+          _c("span", {
+            staticClass: "line",
+            style: { width: _vm.status + "%" }
+          })
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "myModalAlert",
+            tabindex: "-1",
+            role: "dialog",
+            "aria-labelledby": "myModalLabel",
+            "aria-hidden": "true"
+          }
+        },
+        [
           _c(
-            "svg",
-            {
-              attrs: {
-                width: "9",
-                height: "12",
-                viewBox: "0 0 9 12",
-                fill: "none",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
+            "div",
+            { staticClass: "modal-dialog", attrs: { role: "document" } },
             [
-              _c("rect", {
-                attrs: { width: "3", height: "12", fill: "#FF5E0C" }
-              }),
-              _vm._v(" "),
-              _c("rect", {
-                attrs: { x: "6", width: "3", height: "12", fill: "#FF5E0C" }
-              })
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h4",
+                    {
+                      staticClass: "modal-title",
+                      staticStyle: { color: "black" },
+                      attrs: { id: "myModalLabel" }
+                    },
+                    [_vm._v("Нейросеть не запущена")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "modal-body",
+                    staticStyle: { color: "black" }
+                  },
+                  [
+                    _vm._v("\n       Критическая проблема!!! "),
+                    _c("br"),
+                    _vm._v(" Выполните перезагрузку нейросети.\n        ")
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger float-left",
+                      attrs: {
+                        id: "btnhelp",
+                        onclick: "dontShow()",
+                        title:
+                          "До перезагрузки страницы сообщение не будет отображено"
+                      }
+                    },
+                    [_vm._v("Yе показывать")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button", "data-dismiss": "modal" }
+                    },
+                    [_vm._v("Закрыть")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: {
+                        type: "button",
+                        onclick: "restartNeiron()",
+                        title:
+                          "После перезагрузки дождитесь закртия данного окна",
+                        id: "btnreset"
+                      }
+                    },
+                    [_vm._v("Перезагрузить")]
+                  )
+                ])
+              ])
             ]
           )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "progress-bar-planning mb-5" }, [
-        _c("span", { staticClass: "line", style: { width: _vm.status + "%" } })
-      ])
-    ]
-  )
-}
-var staticRenderFns = []
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -69991,7 +70150,11 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", { staticClass: "text-center" }, [
-                      _vm._v("\n\t\t\t\t\t\t\t\t100\n\t\t\t\t\t\t\t")
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\t" +
+                          _vm._s(i.volume_out) +
+                          "\n\t\t\t\t\t\t\t"
+                      )
                     ]),
                     _vm._v(" "),
                     _c("td", { staticClass: "text-center" }, [

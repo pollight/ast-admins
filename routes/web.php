@@ -26,8 +26,8 @@ Route::get('/recipes', 'Admin\RecipeController@index')->name('dashboard.recipes'
 Route::get('/administration', 'DashboardController@administration')->name('dashboard.administration');
 Route::get('/statistics', 'Admin\StatisticsController@index')->name('dashboard.statistics');
 Route::post('/get_volume_graph', 'Admin\StatisticsController@get_volume');
-Route::get('/diagnostics', 'DashboardController@diagnostics')->name('dashboard.diagnostics');
-Route::get('/neural_network', 'DashboardController@neural_network')->name('dashboard.neural_network');
+Route::get('/diagnostics', 'Admin\DashboardController@diagnostics')->name('dashboard.diagnostics');
+Route::get('/neural_network', 'Admin\DashboardController@neural_network')->name('dashboard.neural_network');
 
 
 
@@ -39,7 +39,11 @@ Route::post('/redactRecept', 'Recepts@redact');
 Route::post('/updateRecepts', 'Recepts@update');
 Route::post('/deleteRecept', 'Recepts@deleteRecept');
 Route::post('/selectrecept', 'Recepts@checRecept');
+
 Route::post('/RestartNeuron', 'MachineInfoController@restartMAtriX');
+Route::post('/RestartServer', 'MachineInfoController@resatartServer');											
+Route::post('/startLesson', 'MachineInfoController@startLesson');
+											
 
 Route::get('/recipes/list', 'Admin\RecipeController@getRecipesList')->name('get_recipes_list');
 Route::post('/recipes/create', 'Admin\RecipeController@create')->name('recipes_create');

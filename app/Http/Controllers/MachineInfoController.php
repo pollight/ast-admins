@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\MachineInfo;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class MachineInfoController extends Controller
 {
     /**
@@ -84,12 +84,32 @@ class MachineInfoController extends Controller
     }
     public function restartMAtriX()
     {
-
-        exec (' /home/ast//mysript',$out);
-
+    $path = \DB::table('pathTable')->where('name','Script')->first();
+        //$path = '/home/ast/Desktop/GIT/PYTHON/PROCESS.py';
+    $path=$path->path;
+        exec ('sudo pkill -f '.$path,$out);
+        exec ('python3 '.$path,$out);               
         return json_encode([
             'Matrix'        => "Wake up... Neo",
             'fromUnix'      => $out,
+
+        ]);
+    }
+        public function startLesson()
+    {
+         $path = \DB::table('pathTable')->where('name','Lesson' )->first();
+        exec ('python3 '.$path->path,$out);   /// путь к файлу скрипта с обучением 
+        return json_encode([
+            'Matrix'        => "Wake up... Neo",
+            'apth'          => $path->path,
+
+        ]);
+    }
+      public function resatartServer()
+    {
+        exec ("/home/ss/phpreboot");
+        return json_encode([
+            'answer'        => "перезагружаю",
 
         ]);
     }

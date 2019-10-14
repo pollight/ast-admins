@@ -166,7 +166,7 @@
 								{{i.count}}
 							</td>
 							<td class="text-center">
-								100
+								{{i.volume_out}}
 							</td>
 							<td class="text-center">
 								{{i.volume}}
@@ -610,6 +610,7 @@ axios.interceptors.request.use((config) => {
 						'volume':0,
 						'sort':0,
 						'smens':'',
+						'volume_out':0,
 					},
 				},
 				

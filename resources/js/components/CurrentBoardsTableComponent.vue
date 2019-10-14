@@ -44,7 +44,7 @@
             let vue = this;
             setInterval(function() {
                 vue.refresh();
-            }, 100);
+            }, 300);
         },
         methods: {
             refresh: function () {
@@ -53,6 +53,7 @@
                 axios.post(vue.routes['get_board_current']).then(function (response) {
                     vue.currentBoard = response.data.databoard;
                     vue.recipe = response.data.recipe;
+                   
                 });
             },
         }
