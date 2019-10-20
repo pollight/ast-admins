@@ -4,6 +4,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 /* INIT --- */
+a {
+  color: inherit;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -28,6 +32,7 @@ body,
 .mb12 {
   margin-bottom: 12px !important;
 }
+
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0px;
 }
@@ -40,7 +45,48 @@ h1, h2, h3, h4, h5, h6 {
 .hidden {
   display: none !important;
 }
+
 /* end INIT */
+
+/* INPUT --- */
+.form-check {
+  padding: 0;
+}
+.form-check input[type=checkbox] {
+  opacity: 0;
+}
+
+.form-check label {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 0;
+  position: relative;
+}
+
+.form-check input {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.form-check label::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background-image: url('/images/ico-checkbox.svg');
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* end INPUT */
 
 /* TITLES --- */
 
@@ -57,6 +103,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
   line-height: 100%;
 }
+
 /* end TITLES */
 
 /* SIDEBAR --- */
@@ -85,9 +132,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 0px 5px rgba(3, 207, 60, 0.25);
   border-radius: 50%;
   -webkit-animation-name: light;
-    -webkit-animation-duration: 4000ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
 }
 
 .system-datetime {
@@ -192,6 +239,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 9px;
   transition: all .5s;
 }
+
 .progress-bar-planning .line {
   width: 0;
   display: block;
@@ -205,6 +253,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 100vh;
   position: relative;
 }
+
 /* end SIDEBAR */
 
 /* CONTENT ---*/
@@ -219,12 +268,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-size: 20px;
 }
+
 .content .nav-tabs {
-  border-bottom-color: rgba(255,255,255,0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
+
 .content .nav-tabs .nav-item {
   margin-right: 2.2rem;
 }
+
 .content .nav-tabs .nav-link {
   font-weight: 500;
   font-size: 14px;
@@ -232,6 +284,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 0 0.7rem 0;
   cursor: pointer;
 }
+
 .content .nav-tabs .nav-link.active, .content .nav-tabs .nav-item.show .nav-link {
   color: #fff !important;
   border-top: none;
@@ -251,15 +304,18 @@ h1, h2, h3, h4, h5, h6 {
   height: 240px;
   position: relative;
 }
+
 .table.table-dark {
   background-color: transparent !important;
 }
+
 .table thead th {
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
   border: none !important;
 }
+
 .table tbody td {
   font-weight: 500;
   font-size: 14px;
@@ -269,6 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 .table tr {
   position: relative;
 }
+
 .table tr::before {
   content: "";
   display: block;
@@ -280,6 +337,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
   opacity: 0.1;
 }
+
 /* end CONTENT */
 
 /* STATUS BACKGROUND TABLE */
@@ -287,38 +345,52 @@ h1, h2, h3, h4, h5, h6 {
   background: #4452AD;
   opacity: 0.5;
 }
+
 .status2 {
   background: #4489AD;
   opacity: 0.75;
 }
+
 .status3 {
   background: #BA9377;
   opacity: 0.5;
 }
+
 .status4 {
   background: #E06C41;
   opacity: 0.5;
 }
+
 .status5 {
   background: #E8E0B3;
   opacity: 0.75;
 }
+
 .status6 {
   background: #66A3FF;
   opacity: 0.75;
 }
+
 .status7 {
   background: #CFC176;
   opacity: 0.75;
 }
+
 /* end STATUS BACKGROUND TABLE */
 
 /* animation --- */
 @-webkit-keyframes light {
-    0% { opacity: 1; }
-    50% { opacity: 0.25; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
 /* end animation */
 
 /* menu hamburger --- */
@@ -341,14 +413,17 @@ h1, h2, h3, h4, h5, h6 {
 #menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
 }
+
 #menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
   transform: rotate(0);
 }
+
 #menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
+
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
   left: 0;
@@ -382,10 +457,12 @@ h1, h2, h3, h4, h5, h6 {
 
   transition-duration: .25s;
 }
+
 .menu__btn > span::before {
   content: '';
   top: -8px;
 }
+
 .menu__btn > span::after {
   content: '';
   top: 8px;
@@ -398,9 +475,11 @@ button#logout {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .menu {
   width: 100%;
 }
+
 .menu li a,
 .menu li > span {
   font-family: Montserrat;
@@ -412,9 +491,11 @@ button#logout {
   color: #fff;
   cursor: pointer;
 }
+
 .menu li a:hover {
   text-decoration: none;
 }
+
 .menu li {
   border: 1px solid #474954;
   width: 100%;
@@ -426,6 +507,7 @@ button#logout {
   justify-content: flex-start;
   align-items: center;
 }
+
 .menu li:hover ::after,
 .menu li.active::after {
   display: block;
@@ -450,53 +532,69 @@ button#logout {
   height: 100%;
   border-right: 1px solid #474954;
 }
+
 .menu li.home::before {
   background-image: url('/images/ico-home.svg');
 }
+
 .menu li.recipes::before {
   background-image: url('/images/ico-recipes.svg');
 }
+
 .menu li.admin::before {
   background-image: url('/images/ico-admin.svg');
 }
+
 .menu li.diagnostics::before {
   background-image: url('/images/ico-diagnostics.svg');
 }
+
 .menu li.stat::before {
   background-image: url('/images/ico-stat.svg');
 }
+
 .menu li.network::before {
   background-image: url('/images/ico-network.svg');
 }
+
 .menu li.logs::before {
   background-image: url('/images/ico-logs.svg');
 }
+
 .menu li.print::before {
   background-image: url('/images/ico-print.svg');
 }
+
 .menu li.save::before {
   background-image: url('/images/ico-save.svg');
 }
+
 .menu li.filter::before {
   background-image: url('/images/ico-filter.svg');
 }
+
 .menu li.add::before {
   background-image: url('/images/ico-add.svg');
 }
+
 .menu li.delete::before {
   background-image: url('/images/ico-delete.svg');
 }
+
 .menu li.activates::before {
   background-image: url('/images/ico-activate.svg');
 }
+
 .menu li.delete span {
   color: #FF4444 !important;
   cursor: pointer;
 }
+
 .menu li.add span {
   color: #92D8BC !important;
   cursor: pointer;
 }
+
 /* end menu hamburger */
 
 /* FILETER --- */
@@ -508,6 +606,7 @@ button#logout {
   height: 22px;
   cursor: pointer;
 }
+
 .butt_cancel {
   display: block;
   background-image: url(/images/ico-cancel.svg);
@@ -516,11 +615,13 @@ button#logout {
   height: 14px;
   cursor: pointer;
 }
+
 .filter {
   background: #383B4F;
   padding: 3px 4px;
   margin: -3px -4px;
 }
+
 .filter .form-group {
   border: 1px solid #474954;
   height: 44px;
@@ -531,6 +632,7 @@ button#logout {
   align-items: center;
   margin-bottom: 2px;
 }
+
 .filter .form-group .col-left {
   width: 44px;
   height: 100%;
@@ -540,6 +642,7 @@ button#logout {
   justify-content: center;
   align-items: center;
 }
+
 .filter .form-group .col-center-right {
   width: calc(100% - 44px);
   height: 100%;
@@ -549,6 +652,7 @@ button#logout {
   justify-content: center;
   align-items: center;
 }
+
 .filter .form-group .col-right {
   width: 44px;
   height: 100%;
@@ -558,14 +662,17 @@ button#logout {
   justify-content: center;
   align-items: center;
 }
+
 .filter .form-group .col-center {
   width: calc(100% - 44px - 44px);
   height: 100%;
   border-right: 1px solid #474954;
 }
+
 .filter .form-group .col-max {
   width: 100%;
 }
+
 .filter .form-name {
   font-family: Montserrat;
   font-weight: 500;
@@ -575,6 +682,7 @@ button#logout {
   color: #92D8BC;
   cursor: pointer;
 }
+
 /* tables --- */
 .title-query {
   width: 100%;
@@ -584,8 +692,9 @@ button#logout {
   font-size: 14px;
   line-height: 100%;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 /* end tables */
 /* end FILTER -- */
 
@@ -593,25 +702,30 @@ button#logout {
 .vue-popper {
   background: #383B4F !important;
 }
+
 .vue-input__inner {
   color: #fff !important;
 }
+
 .vue-select__option--hovered {
   background: #383B4F !important;
   color: #498aed;
 }
+
 .vue-select .vue-input i {
   color: #fff;
 }
+
 /* end RESET VUE STYLE */
 
 /* MEDIA --- */
 @media screen and (max-width: 767px) {
-    .sidebar {
-        width: 100%;
-    }
-    .content {
-        width: 100%;
-    }
+  .sidebar {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
 }
+
 /* end MEDIA */

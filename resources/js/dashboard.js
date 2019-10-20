@@ -8,9 +8,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 require('vue2-animate/dist/vue2-animate.min.css');
-import VueHighcharts from 'vue-highcharts';
+// import VueHighcharts from 'vue-highcharts';
  
-Vue.use(VueHighcharts);
+// Vue.use(VueHighcharts);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
