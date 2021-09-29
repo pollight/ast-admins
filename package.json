@@ -26,7 +26,7 @@
     "dependencies": {
         "bootstrap-4-migrate": "^1.0.1",
         "copy-webpack-plugin": "^5.0.4",
-        "datatables.net": "^1.10.20",
+        "datatables.net": "^1.11.3",
         "datatables.net-dt": "^1.10.20",
         "datatables.net-fixedheader-dt": "^3.1.6",
         "datatables.net-scroller-dt": "^2.0.1",
